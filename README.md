@@ -1,4 +1,5 @@
 A07 - VISIT OUR SOLAR SYSTEM ...
+
 Wir wollen nun unser Wissen aus Medientechnik und SEW nützen um eine etwas kreativere Applikation zu erstellen.
 
 Eine wichtige Library zur Erstellung von Games mit 3D-Grafik ist Pygame. Die 3D-Unterstützung wird mittels PyOpenGL erreicht.
