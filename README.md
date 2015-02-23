@@ -62,10 +62,10 @@ Viel Erfolg!
 
 Team: 
 - Dorfinger
-- Maran
+- Kanyildiz
 
 
-a) Gruppenbildung (Dorfinger & Maran)
+a) Gruppenbildung (Dorfinger & Kanyildiz)
 
 
 b) Anforderungenanalyse (Text -> funktionale Anforderungen, -> nicht funktionale Andorferungen
