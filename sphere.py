@@ -11,6 +11,7 @@ def main():
     glutInitWindowSize(1000,1000)
     glutCreateWindow(b'name')
 
+
     glClearColor(0.,0.,0.,1.)
     glShadeModel(GL_SMOOTH)
     glEnable(GL_CULL_FACE)
@@ -23,7 +24,9 @@ def main():
     glLightf(GL_LIGHT0, GL_CONSTANT_ATTENUATION, 0.1)
     glLightf(GL_LIGHT0, GL_LINEAR_ATTENUATION, 0.05)
     glEnable(GL_LIGHT0)
+
     glutDisplayFunc(display)
+
     glMatrixMode(GL_PROJECTION)
     gluPerspective(100.,1.,1.,80.)
     glMatrixMode(GL_MODELVIEW)
@@ -37,12 +40,18 @@ def main():
 def display():
 
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
-    glPushMatrix()
+
     color = [1.0,0.,1.,1.]
+
+
+    glPushMatrix
+    glTranslatef(5,0,0)
+    glRotatef(0.1, 0, 0, 1)
+    glTranslatef(-5,0,0.0)
     glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
-    glTranslatef(1,1,0.0)
-    glutSolidSphere(2,100,20)
-    glPopMatrix()
+    glutWireSphere(1,10,20)
+    glPopMatrix
+    glutPostRedisplay()
     glutSwapBuffers()
     return
 
