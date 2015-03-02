@@ -25,12 +25,13 @@ def main():
     glLightf(GL_LIGHT0, GL_LINEAR_ATTENUATION, 0.05)
     glEnable(GL_LIGHT0)
 
-    glutDisplayFunc(display)
+    #glutDisplayFunc(display)
+    glutDisplayFunc(displaySun)
 
     glMatrixMode(GL_PROJECTION)
-    gluPerspective(100.,1.,1.,80.)
+    gluPerspective(100.,1.,1.,800.)
     glMatrixMode(GL_MODELVIEW)
-    gluLookAt(0,0,10,
+    gluLookAt(0,0,12,
               0,0,0,
               0,1,0)
     glPushMatrix()
@@ -54,5 +55,50 @@ def display():
     glutPostRedisplay()
     glutSwapBuffers()
     return
+
+def displaySun():
+    glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
+
+    color = [1.0,0.,1.,1.]
+
+
+    T = glutGet(GLUT_ELAPSED_TIME) / 1000
+    glPushMatrix
+    glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
+    glRotatef(5 * T, 0, 1, 0)
+    glColor3f(1, 1, 0)
+    glutWireSphere(2, 20, 20)
+    glPopMatrix
+
+    glPushMatrix
+    glRotatef(90 * T, 0, 1, 0)
+    glTranslatef(5, 0, 0)
+    glRotatef(40 * T, 0, 1, 0)
+    glColor3f(1, 0, 0)
+    glutWireSphere(0.6, 10, 10)
+    glPopMatrix
+
+    glPushMatrix
+    glRotatef(60 * T, 0, 1, 0)
+    glTranslatef(-3, 0, 9)
+    glRotatef(50 * T, 0, 1, 0)
+    glColor3f(0, 1, 0)
+    glutWireSphere(1, 16, 16)
+
+    glPushMatrix
+    glRotatef(360 * T, 0, 1, 0)
+    glTranslatef(-1.7, 0, 0)
+    glRotatef(50 * T, 0, 1, 0)
+    glColor3f(0, 0, 1)
+    glutWireSphere(0.4, 10, 10)
+    glPopMatrix
+
+    glPopMatrix
+    glutPostRedisplay
+    glutSwapBuffers()
+    return
+
+
+
 
 if __name__ == '__main__': main()
