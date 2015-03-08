@@ -80,29 +80,33 @@ class sonnensystem:
         (1,5,7,2),
         (4,0,3,6))
 
-    def enableLight(self):
+    def disableLight(self):
+
+        glDisable(GL_LIGHTING)
+        glDisable(GL_LIGHT0)
+
+
+    def showLight(self):
         glShadeModel(GL_SMOOTH)
         glEnable(GL_CULL_FACE)
         glEnable(GL_DEPTH_TEST)
         glEnable(GL_LIGHTING)
-
-    def initLight(self):
-        lightZeroPosition = [50.,0.,0.,0]
+        glDepthFunc(GL_LESS)
+        lightZeroPosition = [0.,0.,0.,1.0]
         lightZeroColor = [0.8,1.0,0.8,1.0] #green tinged
+
         glLightfv(GL_LIGHT0, GL_POSITION, lightZeroPosition)
         glLightfv(GL_LIGHT0, GL_DIFFUSE, lightZeroColor)
         glLightf(GL_LIGHT0, GL_CONSTANT_ATTENUATION, 0.1)
         glLightf(GL_LIGHT0, GL_LINEAR_ATTENUATION, 0.05)
-
-    def showLight(self):
         glEnable(GL_LIGHTING)
         glEnable(GL_LIGHT0)
 
     def Sphere(self,radius):
 
         self.sphere = gluNewQuadric()
-        #gluQuadricDrawStyle(self.sphere,GLU_LINE);
-        gluSphere(self.sphere,radius,100,100)
+        #gluQuadricDrawStyle(self.sphere,GLU_LINE)
+        gluSphere(self.sphere,radius,20,20)
         #glutWireSphere(2,100,20)
 
     def main(self):
@@ -112,16 +116,15 @@ class sonnensystem:
 
         glClearColor(0.,0.,0.,1.)
 
-
-
         gluPerspective(45, (display[0]/display[1]), 0.1, 200.0)
 
         glTranslatef(0,0, -50)
 
-        glRotatef(25, 2, 1, 0)
+        #glRotatef(0, 2, 1, 0)
         glTranslatef(5,1,0.0)
 
         while True:
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -139,9 +142,10 @@ class sonnensystem:
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if event.button == 4:
-                        glTranslatef(0,0,1.0)
+                        glRotatef(90, 2, 1, 0)
                     if event.button == 5:
-                        glTranslatef(0,0,-1.0)
+                        glRotatef(-0, 2, 1, 0)
+
 
 
             glTranslatef(-10.0,0,0)
@@ -155,7 +159,7 @@ class sonnensystem:
             glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
             self.Sphere(1)
 
-            glRotatef(1, 0, 0, 1)
+            #glRotatef(1, 0, 0, 1)
 
             #Grüner Planet
             color = [0.0,1.,0.,1.]
@@ -165,18 +169,20 @@ class sonnensystem:
 
 
             #die sonne
-            color = [1.0,1.,0.,1.]
-            glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
+
             glTranslatef(-5, 0, 0)
+            self.disableLight()
+            #color = [1.0,1.,0.,1.]
+            #glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
+            glColor3f(1, 1, 0)
             self.Sphere(2)
+            self.showLight()
             glPopMatrix()
 
 
             pygame.display.flip()
             pygame.time.wait(10)
 
-            self.enableLight()
-            self.initLight()
-            self.showLight()
+
 xy = sonnensystem()
 xy.main()
