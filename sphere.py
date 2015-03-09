@@ -148,29 +148,36 @@ class sonnensystem:
 
 
 
+
+
+            color = [0.0,0.,1.,1.]
+
             glTranslatef(-10.0,0,0)
             glRotatef(0.5, 0, 1, 0)
             glTranslatef(10.0,0,0)
 
-            color = [0.0,0.,1.,1.]
-
-            glPushMatrix()
             glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
+
+            #Blauer Planet
+            glPushMatrix()
             glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
             self.Sphere(1)
-
-            #glRotatef(1, 0, 0, 1)
+            glPopMatrix()
 
             #Grüner Planet
+            glPushMatrix()
             color = [0.0,1.,0.,1.]
             glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
             glTranslatef(-5, 0, 0)
-            self.Sphere(1.5)
 
+            glRotatef(0.5, 0, 1, 0)
+
+            self.Sphere(1.5)
+            glPopMatrix()
 
             #die sonne
-
-            glTranslatef(-5, 0, 0)
+            glPushMatrix()
+            glTranslatef(-10, 0, 0)
             self.disableLight()
             #color = [1.0,1.,0.,1.]
             #glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
@@ -178,7 +185,6 @@ class sonnensystem:
             self.Sphere(2)
             self.showLight()
             glPopMatrix()
-
 
             pygame.display.flip()
             pygame.time.wait(10)
