@@ -130,15 +130,7 @@ class sonnensystem:
                     pygame.quit()
                     quit()
 
-                if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_LEFT:
-                        glTranslatef(-0.5,0,0)
-                    if event.key == pygame.K_RIGHT:
-                        glTranslatef(0.5,0,0)
-                    if event.key == pygame.K_UP:
-                        glTranslatef(0,0.5,0)
-                    if event.key == pygame.K_DOWN:
-                        glTranslatef(0,-0.5,0)
+
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if event.button == 4:
@@ -183,8 +175,14 @@ class sonnensystem:
             #glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
             glColor3f(1, 1, 0)
             self.Sphere(2)
+
             self.showLight()
             glPopMatrix()
+
+            if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_LEFT:
+                        glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
+                        #self.disableLight()
 
             pygame.display.flip()
             pygame.time.wait(10)
