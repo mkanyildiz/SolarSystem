@@ -12,7 +12,13 @@ from OpenGL.GLUT import *
 from PIL.Image import *
 
 from random import randint
-class sonnensystem:
+
+
+class Sonnensystem:
+    """
+    asdf
+    """
+
     def __init__(self):
         self.surface = ((0,1,2,3),
         (3,2,7,6),
@@ -28,7 +34,6 @@ class sonnensystem:
 
         glDisable(GL_LIGHTING)
         glDisable(GL_LIGHT0)
-
 
     def showLight(self):
         glShadeModel(GL_SMOOTH)
@@ -61,24 +66,24 @@ class sonnensystem:
         image = image.tostring("raw", "RGBX", 0, -1)
 
         # Textur erstellen
-        textures = glGenTextures(3)
+        textures = glGenTextures(1)
         glBindTexture(GL_TEXTURE_2D, textures)  # 2d texture (x and y size)
 
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_NEAREST)
         gluBuild2DMipmaps(GL_TEXTURE_2D, 3, ix, iy, GL_RGBA, GL_UNSIGNED_BYTE, image)
 
-	    return(textures)
+        return textures
 
     def Sphere(self, radius, txt):
-        glBindTexture(GL_TEXTURE_2D, txt)
+
         quadratic = gluNewQuadric()
         # gluQuadricDrawStyle(self.sphere,GLU_LINE)
 
         gluQuadricNormals(quadratic, GLU_SMOOTH)  # Create Smooth Normals (NEW)
         gluQuadricTexture(quadratic, GL_TRUE)  # Create Texture Coords (NEW)
-		# gluSphere(self.sphere,radius,32,32)
-
+        # gluSphere(self.sphere,radius,32,32)
+        glBindTexture(GL_TEXTURE_2D, txt)
         gluSphere(quadratic, radius, 20, 20)
         # glutWireSphere(2,100,20)
         # fzfzjgj
@@ -116,7 +121,7 @@ class sonnensystem:
 
 
 
-            color = [0.0,0.,1.,1.]
+            #color = [0.0,0.,1.,1.]
 
             glTranslatef(-10.0,0,0)
             glRotatef(0.5, 0, 1, 0)
@@ -126,8 +131,8 @@ class sonnensystem:
 
             #Blauer Planet
             glPushMatrix()
-            glMaterialfv(GL_FRONT,GL_DIFFUSE, color)
-			self.txterde = self.LoadTexture("erde")
+            #glMaterialfv(GL_FRONT,GL_DIFFUSE, color)
+            self.txterde = self.LoadTexture("erde")
             self.Sphere(1, self.txterde)
             glPopMatrix()
 
@@ -136,11 +141,11 @@ class sonnensystem:
             #Grüner Planet
             glPushMatrix()
             color = [0.0,1.,0.,1.]
-            glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
+            #glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
             glTranslatef(-5, 0, 0)
 
             glRotatef(0.5, 0, 1, 0)
-			self.txtmerkur = self.LoadTexture("merkur")
+            self.txtmerkur = self.LoadTexture("merkur")
             self.Sphere(1.5,self.txtmerkur)
             glPopMatrix()
 
@@ -150,8 +155,8 @@ class sonnensystem:
             self.disableLight()
             #color = [1.0,1.,0.,1.]
             #glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
-            glColor3f(1, 1, 0)
-			self.txtsonne = self.LoadTexture("sonne")
+            #glColor3f(1, 1, 0)
+            self.txtsonne = self.LoadTexture("sonne")
             self.Sphere(2, self.txtsonne)
 
             self.showLight()
@@ -166,5 +171,5 @@ class sonnensystem:
             pygame.time.wait(10)
 
 
-xy = sonnensystem()
+xy = Sonnensystem()
 xy.main()
