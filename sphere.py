@@ -8,6 +8,9 @@ from pygame.locals import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
 
+from OpenGL.GLUT import *
+from PIL.Image import *
+
 from random import randint
 class sonnensystem:
     verticies = (
@@ -101,11 +104,43 @@ class sonnensystem:
         glLightf(GL_LIGHT0, GL_LINEAR_ATTENUATION, 0.05)
         glEnable(GL_LIGHTING)
         glEnable(GL_LIGHT0)
+		
 
-    def Sphere(self,radius):
+    def LoadTexture(self, pic):
 
+        if pic == "erde":
+            # Bild auswaehlen
+            image = open("./erde.jpg")
+        elif pic == "sonne":
+            image = open("./sonne.jpg")
+        elif pic =="merkur":
+            image = open("./merkur.jpg")
+
+        # Textur
+        ix = image.size[0]
+        iy = image.size[1]
+        image = image.tostring("raw", "RGBX", 0, -1)
+
+        # Textur erstellen
+        textures = glGenTextures(3)
+        glBindTexture(GL_TEXTURE_2D, int(textures[0]))  # 2d texture (x and y size)
+
+        
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_NEAREST)
+        gluBuild2DMipmaps(GL_TEXTURE_2D, 3, ix, iy, GL_RGBA, GL_UNSIGNED_BYTE, image)
+		
+		return textures
+
+    def Sphere(self,radius,txt):
+		glBindTexture(GL_TEXTURE_2D, txt)
         self.sphere = gluNewQuadric()
         #gluQuadricDrawStyle(self.sphere,GLU_LINE)
+		
+        gluQuadricNormals(self.sphere, GLU_SMOOTH)  # Create Smooth Normals (NEW)
+        gluQuadricTexture(self.sphere, GL_TRUE)  # Create Texture Coords (NEW)
+		gluSphere(self.sphere,radius,32,32)
+		
         gluSphere(self.sphere,radius,20,20)
         #glutWireSphere(2,100,20)
 
@@ -155,6 +190,8 @@ class sonnensystem:
             glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
             self.Sphere(1)
             glPopMatrix()
+			
+			
 
             #Grüner Planet
             glPushMatrix()
@@ -163,7 +200,7 @@ class sonnensystem:
             glTranslatef(-5, 0, 0)
 
             glRotatef(0.5, 0, 1, 0)
-
+			self.txtsonne = Texturen.LoadTexture("merkur")
             self.Sphere(1.5)
             glPopMatrix()
 
@@ -174,7 +211,8 @@ class sonnensystem:
             #color = [1.0,1.,0.,1.]
             #glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
             glColor3f(1, 1, 0)
-            self.Sphere(2)
+			self.txtsonne = Texturen.LoadTexture("sonne")
+            self.Sphere(2,self.txtsonne)
 
             self.showLight()
             glPopMatrix()
