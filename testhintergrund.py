@@ -1,3 +1,5 @@
+__author__ = 'mdorfinger'
+
 import tkinter as tk
  
 app_win = tk.Tk()
