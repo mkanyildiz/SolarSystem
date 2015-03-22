@@ -10,68 +10,7 @@ from OpenGL.GLU import *
 
 from random import randint
 class sonnensystem:
-    verticies = (
-        (1,     -1, -1),
-        (1,     1,  -1),
-        (-1,    1,  -1),
-        (-1,    -1, -1),
-        (1,     -1, 1),
-        (1,     1,  1),
-        (-1,    -1, 1),
-        (-1,    1,  1)
-    )
 
-    edges = (
-        (0,1),
-        (0,3),
-        (0,4),
-        (2,1),
-        (2,3),
-        (2,7),
-        (6,3),
-        (6,4),
-        (6,7),
-        (5,1),
-        (5,4),
-        (5,7)
-    )
-
-    surfaces = (
-
-    )
-
-    colors = (
-        (1,0,0),
-        (0,1,0),
-        (0,0,1),
-        (0,1,0),
-        (1,1,1),
-        (0,1,1),
-        (1,0,0),
-        (0,1,0),
-        (0,0,1),
-        (1,0,0),
-        (1,1,1),
-        (0,1,1)
-    )
-
-    """def Cube(self):
-        glBegin(GL_QUADS)
-        x = 0
-        for surface in surfaces:
-            x = 0
-            for vertex in surface:
-                x+=1
-                glColor3fv(colors[x])
-                glVertex3fv(verticies[vertex])
-
-        glEnd()
-
-        glBegin(GL_LINES)
-        for edge in edges:
-            for vertex in edge:
-                glVertex3fv(verticies[vertex])
-        glEnd()"""
     def __init__(self):
         self.surface = ((0,1,2,3),
         (3,2,7,6),
@@ -181,8 +120,8 @@ class sonnensystem:
 
             if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_LEFT:
-                        glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
-                        #self.disableLight()
+                        #glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
+                        self.disableLight()
 
             pygame.display.flip()
             pygame.time.wait(10)
