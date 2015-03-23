@@ -57,17 +57,17 @@ class sonnensystem:
 
         gluPerspective(45, (display[0]/display[1]), 0.1, 200.0)
 
-        glTranslatef(0,0, -50)
+        glTranslatef(-4,0, -50)
 
         #glRotatef(0, 2, 1, 0)
         glTranslatef(5,1,0.0)
-
+        zaehler = 0
         while True:
-
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     quit()
+
 
 
 
@@ -77,38 +77,15 @@ class sonnensystem:
                     if event.button == 5:
                         glRotatef(-0, 2, 1, 0)
 
-
-
+            zaehler = zaehler+1
 
 
             color = [0.0,0.,1.,1.]
 
-            glTranslatef(-10.0,0,0)
-            glRotatef(0.5, 0, 1, 0)
-            glTranslatef(10.0,0,0)
-
             glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
 
-            #Blauer Planet
             glPushMatrix()
-            glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
-            self.Sphere(1)
-            glPopMatrix()
 
-            #Grüner Planet
-            glPushMatrix()
-            color = [0.0,1.,0.,1.]
-            glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
-            glTranslatef(-5, 0, 0)
-
-            glRotatef(0.5, 0, 1, 0)
-
-            self.Sphere(1.5)
-            glPopMatrix()
-
-            #die sonne
-            glPushMatrix()
-            glTranslatef(-10, 0, 0)
             self.disableLight()
             #color = [1.0,1.,0.,1.]
             #glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
@@ -116,6 +93,22 @@ class sonnensystem:
             self.Sphere(2)
 
             self.showLight()
+            glPopMatrix()
+
+            glPushMatrix()
+            color = [0.0,0.,1.,1.]
+            glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
+            glRotatef(1*zaehler, 0, 1, 0)
+            glTranslatef(-5, 0, 0)
+            self.Sphere(1.5)
+            glPopMatrix()
+
+            glPushMatrix()
+            color = [0.0,1.,0.,1.]
+            glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
+            glRotatef(3*zaehler, 0, 1, 0)
+            glTranslatef(-10, 0, 0)
+            self.Sphere(0.5)
             glPopMatrix()
 
             if event.type == pygame.KEYDOWN:
