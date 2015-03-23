@@ -80,6 +80,8 @@ class Sonnensystem:
         quadratic = gluNewQuadric()
         # gluQuadricDrawStyle(self.sphere,GLU_LINE)
 
+        glEnable(GL_TEXTURE_2D)
+
         gluQuadricNormals(quadratic, GLU_SMOOTH)  # Create Smooth Normals (NEW)
         gluQuadricTexture(quadratic, GL_TRUE)  # Create Texture Coords (NEW)
         # gluSphere(self.sphere,radius,32,32)
