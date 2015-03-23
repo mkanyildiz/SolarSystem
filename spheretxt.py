@@ -29,6 +29,7 @@ class Sonnensystem:
         self.txtmerkur = None
         self.txterde = None
         self.txtsonne = None
+        self.mod = True
 
     def disableLight(self):
 
@@ -54,11 +55,11 @@ class Sonnensystem:
     def LoadTexture(self, pic):
         if pic == "erde":
             # Bild auswaehlen
-            image = open("./erde.jpg")
+            image = open("./textures/erde.jpg")
         elif pic == "sonne":
-            image = open("./sonne.jpg")
+            image = open("./textures/sonne.jpg")
         elif pic =="merkur":
-            image = open("./merkur.jpg")
+            image = open("./textures/merkur.jpg")
 
         # Textur
         ix = image.size[0]
@@ -80,15 +81,23 @@ class Sonnensystem:
         quadratic = gluNewQuadric()
         # gluQuadricDrawStyle(self.sphere,GLU_LINE)
 
-        glEnable(GL_TEXTURE_2D)
-
         gluQuadricNormals(quadratic, GLU_SMOOTH)  # Create Smooth Normals (NEW)
         gluQuadricTexture(quadratic, GL_TRUE)  # Create Texture Coords (NEW)
         # gluSphere(self.sphere,radius,32,32)
         glBindTexture(GL_TEXTURE_2D, txt)
         gluSphere(quadratic, radius, 20, 20)
         # glutWireSphere(2,100,20)
-        # fzfzjgj
+
+    def textureChange(self):
+        if self.mod is True:
+            glEnable(GL_TEXTURE_2D)
+            self.mod = False
+            self.txtmerkur = self.LoadTexture("merkur")
+            self.txtsonne = self.LoadTexture("sonne")
+            self.txterde = self.LoadTexture("erde")
+        else:
+            glDisable(GL_TEXTURE_2D)
+            self.mod = True
 
     def main(self):
         pygame.init()
@@ -164,10 +173,16 @@ class Sonnensystem:
             self.showLight()
             glPopMatrix()
 
+            if event.type == pygame.K_DOWN:
+                print("asdf")
+                if event.key == pygame.K_LEFT:
+                    glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
+                    #self.disableLight()
+
             if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_LEFT:
-                        glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
-                        #self.disableLight()
+                self.textureChange()
+                #print("Test")
+
 
             pygame.display.flip()
             pygame.time.wait(10)
