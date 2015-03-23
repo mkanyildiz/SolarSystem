@@ -11,7 +11,11 @@ from OpenGL.GLU import *
 from random import randint
 class sonnensystem:
 
+    lightZeroPosition = []
+    colorsun = None
+
     def __init__(self):
+        self.lightZeroPosition = [0.,0.,0.,1]
         self.surface = ((0,1,2,3),
         (3,2,7,6),
         (6,7,5,4),
@@ -32,9 +36,9 @@ class sonnensystem:
         glEnable(GL_LIGHTING)
         glDepthFunc(GL_LESS)
 
-        lightZeroPosition = [0.,0.,0.,1]
+
         lightZeroColor = [0.8,1.0,0.8,1.0] #green tinged
-        glLightfv(GL_LIGHT0, GL_POSITION, lightZeroPosition)
+        glLightfv(GL_LIGHT0, GL_POSITION, self.lightZeroPosition)
         glLightfv(GL_LIGHT0, GL_DIFFUSE, lightZeroColor)
         glLightf(GL_LIGHT0, GL_CONSTANT_ATTENUATION, 0.1)
         glLightf(GL_LIGHT0, GL_LINEAR_ATTENUATION, 0.05)
@@ -63,6 +67,8 @@ class sonnensystem:
         glTranslatef(5,1,0.0)
         zaehler = 0
         zaehlerMoon = 0
+        zaehlerPersp = 0
+        self.colorsun = glColor3f(1, 1, 0)
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -70,22 +76,30 @@ class sonnensystem:
                     quit()
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
+                    zaehlerPersp = zaehlerPersp+1
                     if event.button == 4:
-                        glRotatef(90, 2, 1, 0)
+                        glLoadIdentity()
+                        # Set the camera
+                        gluLookAt(	0, 0, 0,
+                        0, 0,  50,
+                        0, 0,  0)
+
+                        #glRotatef(90, 2, 1, 0)
                     if event.button == 5:
-                        glRotatef(-0, 2, 1, 0)
+                        glTranslatef(-4,0, 1*-(zaehlerPersp))
+                        #glRotatef(-0, 2, 1, 0)
 
             zaehler = zaehler+1
 
 
-            color = [0.0,0.,1.,1.]
+            #color = self.sunlight
 
             glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
 
             #Sonne
             glPushMatrix()
             self.disableLight()
-            glColor3f(1, 1, 0)
+            self.colorsun
             self.Sphere(2)
             self.showLight()
             glPopMatrix()
@@ -120,9 +134,13 @@ class sonnensystem:
             glPopMatrix()
 
             if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_LEFT:
-                        #glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
-                        self.disableLight()
+                    if event.key == pygame.K_f:
+                        self.lightZeroPosition = [0.,0.,0.,0]
+                        self.colorsun = glColor3f(0.05, 0.05, 0.05)
+                    if event.key == pygame.K_o:
+                        self.lightZeroPosition = [0.,0.,0.,1]
+                        self.colorsun = glColor3f(1, 1, 0)
+
 
             pygame.display.flip()
             pygame.time.wait(10)
