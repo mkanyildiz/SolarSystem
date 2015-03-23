@@ -31,9 +31,9 @@ class sonnensystem:
         glEnable(GL_DEPTH_TEST)
         glEnable(GL_LIGHTING)
         glDepthFunc(GL_LESS)
-        lightZeroPosition = [0.,0.,0.,1.0]
-        lightZeroColor = [0.8,1.0,0.8,1.0] #green tinged
 
+        lightZeroPosition = [0.,0.,0.,1]
+        lightZeroColor = [0.8,1.0,0.8,1.0] #green tinged
         glLightfv(GL_LIGHT0, GL_POSITION, lightZeroPosition)
         glLightfv(GL_LIGHT0, GL_DIFFUSE, lightZeroColor)
         glLightf(GL_LIGHT0, GL_CONSTANT_ATTENUATION, 0.1)
@@ -62,14 +62,12 @@ class sonnensystem:
         #glRotatef(0, 2, 1, 0)
         glTranslatef(5,1,0.0)
         zaehler = 0
+        zaehlerMoon = 0
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     quit()
-
-
-
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if event.button == 4:
@@ -84,25 +82,35 @@ class sonnensystem:
 
             glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
 
+            #Sonne
             glPushMatrix()
-
             self.disableLight()
-            #color = [1.0,1.,0.,1.]
-            #glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
             glColor3f(1, 1, 0)
             self.Sphere(2)
-
             self.showLight()
             glPopMatrix()
 
+            #blau
             glPushMatrix()
             color = [0.0,0.,1.,1.]
             glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
             glRotatef(1*zaehler, 0, 1, 0)
             glTranslatef(-5, 0, 0)
             self.Sphere(1.5)
+            zaehlerMoon = zaehlerMoon+1
+
+            #Moon
+            glPushMatrix()
+            color = [0.211,0.211,0.211,1.]
+            glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
+            glRotatef(5*zaehlerMoon, 0, 1, 0)
+            glTranslatef(-2, 0, 0)
+            self.Sphere(0.5)
             glPopMatrix()
 
+            glPopMatrix()
+
+            #grün
             glPushMatrix()
             color = [0.0,1.,0.,1.]
             glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
