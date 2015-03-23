@@ -179,7 +179,8 @@ class Sonnensystem:
                     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
                     #self.disableLight()
 
-            if event.type == pygame.KEYDOWN:
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                print(""+ str(pygame.MOUSEBUTTONDOWN))
                 self.textureChange()
                 #print("Test")
 
