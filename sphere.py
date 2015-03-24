@@ -70,7 +70,7 @@ class sonnensystem:
         image = image.tostring("raw", "RGBX", 0, -1)
 
         # Textur erstellen
-        glEnable(GL_TEXTURE_2D)
+        #glEnable(GL_TEXTURE_2D)
         textures = glGenTextures(1)
         glBindTexture(GL_TEXTURE_2D, textures)  # 2d texture (x and y size)
 
@@ -86,7 +86,6 @@ class sonnensystem:
 
         gluQuadricNormals(quadratic, GLU_SMOOTH)  # Create Smooth Normals (NEW)
         gluQuadricTexture(quadratic, GL_TRUE)  # Create Texture Coords (NEW)
-
         #gluQuadricDrawStyle(self.sphere,GLU_LINE)
 
         glBindTexture(GL_TEXTURE_2D, txt)
@@ -100,7 +99,7 @@ class sonnensystem:
             self.txtmerkur = self.LoadTexture("merkur")
             self.txtsonne = self.LoadTexture("sonne")
             self.txterde = self.LoadTexture("erde")
-            self.txtmoon = self.LoadTexture("moon")
+            self.txtmond  = self.LoadTexture("mond")
         else:
             glDisable(GL_TEXTURE_2D)
             self.mod = True
@@ -108,6 +107,7 @@ class sonnensystem:
     def main(self):
         pygame.init()
         display = (800,600)
+
         pygame.display.set_mode(display, DOUBLEBUF|OPENGL)
 
         glClearColor(0.,0.,0.,1.)
@@ -149,6 +149,7 @@ class sonnensystem:
 
             glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
 
+
             #Sonne
             glPushMatrix()
             self.disableLight()
@@ -174,8 +175,8 @@ class sonnensystem:
             glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
             glRotatef(5*zaehlerMoon, 0, 1, 0)
             glTranslatef(-2, 0, 0)
-            #self.txtmond = self.LoadTexture("mond")
-            self.Sphere(0.5, self.txterde)
+            self.txtmond = self.LoadTexture("mond")
+            self.Sphere(0.5, self.txtmond)
             glPopMatrix()
 
             glPopMatrix()
@@ -197,6 +198,10 @@ class sonnensystem:
                     if event.key == pygame.K_o:
                         self.lightZeroPosition = [0.,0.,0.,1]
                         self.colorsun = glColor3f(1, 1, 0)
+
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                print(""+ str(pygame.MOUSEBUTTONDOWN))
+                self.textureChange()
 
 
             pygame.display.flip()
