@@ -1,3 +1,6 @@
+__author__ = 'mdorfinger, mkanyildiz'
+
+
 
 import math
 from OpenGL.raw.GLUT import glutSolidSphere
