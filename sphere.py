@@ -119,10 +119,12 @@ class Sonnensystem:
 
         gluPerspective(45, (display[0]/display[1]), 0.1, 200.0)
 
-        glTranslatef(-4,0, -50)
-
+        #glTranslatef(-4,0, -50)
+        gluLookAt(	0, 0, -50,
+                    0, 0,  0,
+                    0, 1,  1)
         #glRotatef(0, 2, 1, 0)
-        glTranslatef(5,1,0.0)
+        glTranslatef(0,1,0.0)
         zaehler = 0
         zaehlerMoon = 0
         zaehlerPersp = 0
@@ -133,19 +135,35 @@ class Sonnensystem:
                     pygame.quit()
                     quit()
 
+
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     zaehlerPersp = zaehlerPersp+1
+
+                    #Zoom in
                     if event.button == 4:
-                        glLoadIdentity()
+
                         # Set the camera
-                        gluLookAt(	0, 0, 0,
-                        0, 0,  50,
-                        0, 0,  0)
+                        gluLookAt(0, 0,1,
+                                0, 0,  0,
+                                0, 1,  0)
 
                         #glRotatef(90, 2, 1, 0)
+
+                    #Zoom out
                     if event.button == 5:
-                        glTranslatef(-4,0, 1*-(zaehlerPersp))
-                        #glRotatef(-0, 2, 1, 0)
+                            # Set the camera
+                        gluLookAt(0, 0,-1,
+                                0, 0,  0,
+                                0, 1,  0)
+
+                        gluLookAt(0, 0,1,
+                            0, 0,  0,
+                            0, 1,  0)
+
+                        gluLookAt(0, 0,-1,
+                                0, 0,  0,
+                                0, 1,  0)
+
 
             zaehler = zaehler+1
 
