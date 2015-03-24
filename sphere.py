@@ -92,13 +92,14 @@ class Sonnensystem:
         #gluQuadricDrawStyle(self.sphere,GLU_LINE)
 
         glBindTexture(GL_TEXTURE_2D, txt)
-        gluSphere(quadratic,radius,20,20)
+        gluSphere(quadratic,radius,30,30)
         #glutWireSphere(2,100,20)
 
     def textureChange(self):
         if self.mod is True:
             glEnable(GL_TEXTURE_2D)
             self.mod = False
+
             self.txtmerkur = self.LoadTexture("merkur")
             self.txtsonne = self.LoadTexture("sonne")
             self.txterde = self.LoadTexture("erde")
@@ -184,10 +185,13 @@ class Sonnensystem:
 
             #blau
             glPushMatrix()
-            #color = [0.0,0.,1.,1.]
-            #glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
+
+            #rotation um die Sonne
             glRotatef(1*zaehler, 0, 1, 0)
             glTranslatef(-5, 0, 0)
+
+            #rotation um die eigene achse
+            glRotatef(5*zaehler, 0, 1, 0)
             self.txterde = self.LoadTexture("erde")
             self.Sphere(1.5, self.txterde)
             zaehlerMoon = zaehlerMoon+1
@@ -196,8 +200,14 @@ class Sonnensystem:
             glPushMatrix()
             color = [0.211,0.211,0.211,1.]
             glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
+
+            #Rotation um den Planeten
             glRotatef(5*zaehlerMoon, 0, 1, 0)
             glTranslatef(-2, 0, 0)
+
+            #rotation um die eigene achse
+            glRotatef(5*zaehlerMoon, 0, 1, 0)
+
             self.txtmond = self.LoadTexture("mond")
             self.Sphere(0.5, self.txtmond)
             glPopMatrix()
@@ -206,8 +216,12 @@ class Sonnensystem:
 
             #grün
             glPushMatrix()
-            #color = [0.0,1.,0.,1.]
+
+            #rotation um die sonne
             glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
+            glRotatef(3*zaehler, 0, 1, 0)
+
+            #rotation um die eigene achse
             glRotatef(3*zaehler, 0, 1, 0)
             glTranslatef(-10, 0, 0)
             self.txtmerkur = self.LoadTexture("merkur")
