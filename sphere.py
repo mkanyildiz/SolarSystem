@@ -108,6 +108,8 @@ class sonnensystem:
         pygame.init()
         display = (800,600)
 
+        pygame.display.set_caption("Solarsystem")
+
         pygame.display.set_mode(display, DOUBLEBUF|OPENGL)
 
         glClearColor(0.,0.,0.,1.)
