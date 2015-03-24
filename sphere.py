@@ -15,7 +15,7 @@ from OpenGL.GLUT import *
 from PIL.Image import *
 
 from random import randint
-class sonnensystem:
+class Sonnensystem:
 
     lightZeroPosition = []
     colorsun = None
@@ -213,5 +213,5 @@ class sonnensystem:
             pygame.time.wait(10)
 
 
-xy = sonnensystem()
-xy.main()
+#xy = Sonnensystem()
+#xy.main()
