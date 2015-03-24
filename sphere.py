@@ -7,6 +7,9 @@ from pygame.locals import *
 
 from OpenGL.GL import *
 from OpenGL.GLU import *
+from OpenGL.GLUT import *
+
+from PIL.Image import *
 
 from random import randint
 class sonnensystem:
@@ -22,6 +25,11 @@ class sonnensystem:
         (4,5,1,0),
         (1,5,7,2),
         (4,0,3,6))
+        self.txtmerkur = None
+        self.txterde = None
+        self.txtsonne = None
+        self.txtmond = None
+        self.mod = True
 
     def disableLight(self):
 
@@ -45,12 +53,57 @@ class sonnensystem:
         glEnable(GL_LIGHTING)
         glEnable(GL_LIGHT0)
 
-    def Sphere(self,radius):
+    def LoadTexture(self, pic):
+        if pic == "erde":
+            # Bild auswaehlen
+            image = open("./textures/erde.jpg")
+        elif pic == "sonne":
+            image = open("./textures/sonne.jpg")
+        elif pic =="merkur":
+            image = open("./textures/merkur.jpg")
+        elif pic == "mond":
+            image = open("./textures/moon.jpg")
 
-        self.sphere = gluNewQuadric()
+        # Textur
+        ix = image.size[0]
+        iy = image.size[1]
+        image = image.tostring("raw", "RGBX", 0, -1)
+
+        # Textur erstellen
+        glEnable(GL_TEXTURE_2D)
+        textures = glGenTextures(1)
+        glBindTexture(GL_TEXTURE_2D, textures)  # 2d texture (x and y size)
+
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_NEAREST)
+        gluBuild2DMipmaps(GL_TEXTURE_2D, 3, ix, iy, GL_RGBA, GL_UNSIGNED_BYTE, image)
+
+        return textures
+
+    def Sphere(self,radius, txt):
+
+        quadratic = gluNewQuadric()
+
+        gluQuadricNormals(quadratic, GLU_SMOOTH)  # Create Smooth Normals (NEW)
+        gluQuadricTexture(quadratic, GL_TRUE)  # Create Texture Coords (NEW)
+
         #gluQuadricDrawStyle(self.sphere,GLU_LINE)
-        gluSphere(self.sphere,radius,20,20)
+
+        glBindTexture(GL_TEXTURE_2D, txt)
+        gluSphere(quadratic,radius,20,20)
         #glutWireSphere(2,100,20)
+
+    def textureChange(self):
+        if self.mod is True:
+            glEnable(GL_TEXTURE_2D)
+            self.mod = False
+            self.txtmerkur = self.LoadTexture("merkur")
+            self.txtsonne = self.LoadTexture("sonne")
+            self.txterde = self.LoadTexture("erde")
+            self.txtmoon = self.LoadTexture("moon")
+        else:
+            glDisable(GL_TEXTURE_2D)
+            self.mod = True
 
     def main(self):
         pygame.init()
@@ -100,17 +153,19 @@ class sonnensystem:
             glPushMatrix()
             self.disableLight()
             self.colorsun
-            self.Sphere(2)
+            self.txtsonne = self.LoadTexture("sonne")
+            self.Sphere(2, self.txtsonne)
             self.showLight()
             glPopMatrix()
 
             #blau
             glPushMatrix()
-            color = [0.0,0.,1.,1.]
-            glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
+            #color = [0.0,0.,1.,1.]
+            #glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
             glRotatef(1*zaehler, 0, 1, 0)
             glTranslatef(-5, 0, 0)
-            self.Sphere(1.5)
+            self.txterde = self.LoadTexture("erde")
+            self.Sphere(1.5, self.txterde)
             zaehlerMoon = zaehlerMoon+1
 
             #Moon
@@ -119,18 +174,20 @@ class sonnensystem:
             glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
             glRotatef(5*zaehlerMoon, 0, 1, 0)
             glTranslatef(-2, 0, 0)
-            self.Sphere(0.5)
+            #self.txtmond = self.LoadTexture("mond")
+            self.Sphere(0.5, self.txterde)
             glPopMatrix()
 
             glPopMatrix()
 
             #grün
             glPushMatrix()
-            color = [0.0,1.,0.,1.]
+            #color = [0.0,1.,0.,1.]
             glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
             glRotatef(3*zaehler, 0, 1, 0)
             glTranslatef(-10, 0, 0)
-            self.Sphere(0.5)
+            self.txtmerkur = self.LoadTexture("merkur")
+            self.Sphere(0.5, self.txtmerkur)
             glPopMatrix()
 
             if event.type == pygame.KEYDOWN:
