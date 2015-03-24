@@ -12,7 +12,7 @@ class Start:
 
     root = tkinter.Tk()
 
-    s = Splashscreen(root,"./textures/splash.png",1)
+    s = Splashscreen(root, "./textures/splash.png", 2)
     s.__enter__()
     s.__exit__()
 
