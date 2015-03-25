@@ -21,6 +21,10 @@ class Sonnensystem:
     colorsun = None
 
     def __init__(self):
+        """
+
+        :return:
+        """
         self.lightZeroPosition = [0.,0.,0.,1]
         self.surface = ((0,1,2,3),
         (3,2,7,6),
@@ -28,19 +32,29 @@ class Sonnensystem:
         (4,5,1,0),
         (1,5,7,2),
         (4,0,3,6))
+
+        # Die Variablen für die Texturen werden deklariert
         self.txtmerkur = None
         self.txterde = None
         self.txtsonne = None
         self.txtmond = None
+        # mod braucht man um die Textur zu wechseln.
         self.mod = True
 
     def disableLight(self):
+        """
 
+        :return:
+        """
         glDisable(GL_LIGHTING)
         glDisable(GL_LIGHT0)
 
 
     def showLight(self):
+        """
+
+        :return:
+        """
         glShadeModel(GL_SMOOTH)
         glEnable(GL_CULL_FACE)
         glEnable(GL_DEPTH_TEST)
@@ -56,34 +70,38 @@ class Sonnensystem:
         glEnable(GL_LIGHTING)
         glEnable(GL_LIGHT0)
 
-    def LoadTexture(self, pic):
-        if pic == "erde":
-            # Bild auswaehlen
-            image = open("./textures/erde.jpg")
-        elif pic == "sonne":
-            image = open("./textures/sonne.jpg")
-        elif pic =="merkur":
-            image = open("./textures/merkur.jpg")
-        elif pic == "mond":
-            image = open("./textures/moon.jpg")
+    def loadTexture(self, bild):
+        """
+        Diese Methode lädt die Bilder die auf die Planeten gegeben werden.
+
+        :param bild: Es wird angegeben welches Bild geöffnet werden soll.
+        :return: Die Textur ID
+        """
+
+        image = open(bild) # Das Bild wird geladen.
 
         # Textur
-        ix = image.size[0]
-        iy = image.size[1]
+        ix = image.size[0] # Größe der Textur (Horizontal)
+        iy = image.size[1] # Größe der Textur (Vertikal)
         image = image.tostring("raw", "RGBX", 0, -1)
 
         # Textur erstellen
-        #glEnable(GL_TEXTURE_2D)
-        textures = glGenTextures(1)
+        textures = glGenTextures(1) # Textur ID
         glBindTexture(GL_TEXTURE_2D, textures)  # 2d texture (x and y size)
 
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_NEAREST)
         gluBuild2DMipmaps(GL_TEXTURE_2D, 3, ix, iy, GL_RGBA, GL_UNSIGNED_BYTE, image)
 
-        return textures
+        return textures #ID wird zurückgegeben
 
-    def Sphere(self,radius, txt):
+    def sphere(self, radius, txt):
+        """
+        Diese Methode erstellt ein Sphere und legt die Textur darauf.
+        :param radius: Wiegroß die Sphere sein soll.
+        :param txt: Welche Textur raufgelegt werden soll.
+        :return:
+        """
 
         quadratic = gluNewQuadric()
 
@@ -91,24 +109,30 @@ class Sonnensystem:
         gluQuadricTexture(quadratic, GL_TRUE)  # Create Texture Coords (NEW)
         #gluQuadricDrawStyle(self.sphere,GLU_LINE)
 
-        glBindTexture(GL_TEXTURE_2D, txt)
-        gluSphere(quadratic,radius,30,30)
+        glBindTexture(GL_TEXTURE_2D, txt) # Textur auf Objekt legen
+        gluSphere(quadratic,radius,30,30) # Sphere wird erstellt
         #glutWireSphere(2,100,20)
 
     def textureChange(self):
+        """
+        Diese Methode sorgt dafür, dass die Textur ein bzw ausgeschalten wird.
+        :return:
+        """
         if self.mod is True:
-            glEnable(GL_TEXTURE_2D)
             self.mod = False
-
-            self.txtmerkur = self.LoadTexture("merkur")
-            self.txtsonne = self.LoadTexture("sonne")
-            self.txterde = self.LoadTexture("erde")
-            self.txtmond  = self.LoadTexture("mond")
+            glEnable(GL_TEXTURE_2D)
+            self.txtmerkur = self.loadTexture("./textures/merkur.jpg")
+            self.txtsonne = self.loadTexture("./textures/sonne.jpg")
+            self.txterde = self.loadTexture("./textures/erde.jpg")
+            self.txtmond  = self.loadTexture("./textures/moon.jpg")
         else:
-            glDisable(GL_TEXTURE_2D)
             self.mod = True
+            glDisable(GL_TEXTURE_2D)
 
     def main(self):
+        """
+        :return:
+        """
         pygame.init()
         display = (800,600)
 
@@ -178,8 +202,8 @@ class Sonnensystem:
             glPushMatrix()
             self.disableLight()
             self.colorsun
-            self.txtsonne = self.LoadTexture("sonne")
-            self.Sphere(2, self.txtsonne)
+            self.txtsonne = self.loadTexture("./textures/sonne.jpg") # Textur wird geladen
+            self.sphere(2, self.txtsonne) # Sphere wird erstellt
             self.showLight()
             glPopMatrix()
 
@@ -192,8 +216,8 @@ class Sonnensystem:
 
             #rotation um die eigene achse
             glRotatef(5*zaehler, 0, 1, 0)
-            self.txterde = self.LoadTexture("erde")
-            self.Sphere(1.5, self.txterde)
+            self.txterde = self.loadTexture("./textures/erde.jpg") # Textur wird geladen
+            self.sphere(1.5, self.txterde) # Sphere wird erstellt
             zaehlerMoon = zaehlerMoon+1
 
             #Moon
@@ -208,8 +232,8 @@ class Sonnensystem:
             #rotation um die eigene achse
             glRotatef(5*zaehlerMoon, 0, 1, 0)
 
-            self.txtmond = self.LoadTexture("mond")
-            self.Sphere(0.5, self.txtmond)
+            self.txtmond = self.loadTexture("./textures/moon.jpg") # Textur wird geladen
+            self.sphere(0.5, self.txtmond) # Sphere wird erstellt
             glPopMatrix()
 
             glPopMatrix()
@@ -224,8 +248,8 @@ class Sonnensystem:
             #rotation um die eigene achse
             glRotatef(3*zaehler, 0, 1, 0)
             glTranslatef(-10, 0, 0)
-            self.txtmerkur = self.LoadTexture("merkur")
-            self.Sphere(0.5, self.txtmerkur)
+            self.txtmerkur = self.loadTexture("./textures/merkur.jpg") # Textur wird geladen
+            self.sphere(0.5, self.txtmerkur) # Sphere wird erstellt
             glPopMatrix()
 
             if event.type == pygame.KEYDOWN:
@@ -236,14 +260,14 @@ class Sonnensystem:
                         self.lightZeroPosition = [0.,0.,0.,1]
                         self.colorsun = glColor3f(1, 1, 0)
 
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                print(""+ str(pygame.MOUSEBUTTONDOWN))
-                self.textureChange()
+            if event.type == pygame.MOUSEBUTTONDOWN: # wenn die Maus gedrückt wird
+                # print(""+ str(pygame.MOUSEBUTTONDOWN))
+                self.textureChange() # wird die Textur ein bzw ausgeschalten
 
 
             pygame.display.flip()
             pygame.time.wait(10)
 
 
-#xy = Sonnensystem()
-#xy.main()
+# xy = Sonnensystem()
+# xy.main()
