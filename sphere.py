@@ -22,12 +22,6 @@ class Sonnensystem:
 
     def __init__(self):
         self.lightZeroPosition = [0.,0.,0.,1]
-        self.surface = ((0,1,2,3),
-        (3,2,7,6),
-        (6,7,5,4),
-        (4,5,1,0),
-        (1,5,7,2),
-        (4,0,3,6))
         self.txtmerkur = None
         self.txterde = None
         self.txtsonne = None
@@ -116,6 +110,7 @@ class Sonnensystem:
 
         pygame.display.set_mode(display, DOUBLEBUF|OPENGL)
 
+
         glClearColor(0.,0.,0.,1.)
 
         gluPerspective(45, (display[0]/display[1]), 0.1, 200.0)
@@ -165,11 +160,20 @@ class Sonnensystem:
                                 0, 0,  0,
                                 0, 1,  0)
 
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_f:
+                        self.lightZeroPosition = [0.,0.,0.,0]
+                        self.colorsun = glColor3f(0.05, 0.05, 0.05)
+                    if event.key == pygame.K_o:
+                        self.lightZeroPosition = [0.,0.,0.,1]
+                        self.colorsun = glColor3f(1, 1, 0)
+                    if event.key == pygame.K_w:
+                        gluLookAt(0, 1,0,
+                                0, 0,  0,
+                                0, 0,  1)
+
 
             zaehler = zaehler+1
-
-
-            #color = self.sunlight
 
             glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
 
@@ -202,7 +206,7 @@ class Sonnensystem:
             glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
 
             #Rotation um den Planeten
-            glRotatef(5*zaehlerMoon, 0, 1, 0)
+            glRotatef(2*zaehlerMoon, 0, 1, 0)
             glTranslatef(-2, 0, 0)
 
             #rotation um die eigene achse
@@ -213,6 +217,7 @@ class Sonnensystem:
             glPopMatrix()
 
             glPopMatrix()
+
 
             #grün
             glPushMatrix()
@@ -228,17 +233,12 @@ class Sonnensystem:
             self.Sphere(0.5, self.txtmerkur)
             glPopMatrix()
 
-            if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_f:
-                        self.lightZeroPosition = [0.,0.,0.,0]
-                        self.colorsun = glColor3f(0.05, 0.05, 0.05)
-                    if event.key == pygame.K_o:
-                        self.lightZeroPosition = [0.,0.,0.,1]
-                        self.colorsun = glColor3f(1, 1, 0)
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 print(""+ str(pygame.MOUSEBUTTONDOWN))
                 self.textureChange()
+
+        # Fill background
 
 
             pygame.display.flip()
