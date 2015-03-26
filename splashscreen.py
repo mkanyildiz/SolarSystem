@@ -8,53 +8,76 @@ import time
 class Splashscreen:
 
     """
-    asdf
+    Diese Klasse zeigt vor Start des Programms ein Bild, das automatisch wieder verschwindet.
     """
 
     def __init__(self, root, file, wait):
-        self.__root = root
-        self.__file = file
-        self.__wait = wait + time.clock()
+        """
+        Diese Methode initialisiert die Parametet.
+
+        :param root: tkinter muss übergeben werden
+        :param file: das Bild das angezeigt wird
+        :param wait: die Zeit wielange das Bild angezeigt wird
+        :return:
+        """
+        self.__root = rootself.__file = file  # das Bild wird übergeben
+        self.__wait = wait + time.clock()  # aktuelle Zeit plus die aktuelle Zeit (damit es sich nach einer gewissen
+        # Zeit wieder schließt
 
     def __enter__(self):
-        # Hide the root while it is built.
-        self.__root.withdraw()
-        # Create components of splash screen.
+        """
+        Diese Methode sorgt dafür, dass das Bild angezeigt wird
+        :return:
+        """
+        self.__root.withdraw()  # versteckt tkinter
+
+        # Erstellt die Componenten vom Splashscreen
         window = tkinter.Toplevel(self.__root)
         canvas = tkinter.Canvas(window)
         splash = tkinter.PhotoImage(master=window, file=self.__file)
-        # Get the screen's width and height.
+
+        # Bekommt die Höhe und Breite vom Fenster
         scrW = window.winfo_screenwidth()
         scrH = window.winfo_screenheight()
-        # Get the images's width and height.
+
+        # Bekommt die Höhe und Breite vom Bild
         imgW = splash.width()
         imgH = splash.height()
-        # Compute positioning for splash screen.
+
+        #Positioniert den Splashscreen
         Xpos = (scrW - imgW) // 2
         Ypos = (scrH - imgH) // 2
-        # Configure the window showing the logo.
+
+       # Window wird erstellt das das Bild zeigt
         window.overrideredirect(True)
         window.geometry('+{}+{}'.format(Xpos, Ypos))
-        # Setup canvas on which image is drawn.
+
+        # Canvas wird erstellt auf dem das Bild gezeichnet wird
         canvas.configure(width=imgW, height=imgH, highlightthickness=0)
         canvas.grid()
-        # Show the splash screen on the monitor.
+
+        # Zeigt den Splashscreen auf dem Monitor
         canvas.create_image(imgW // 2, imgH // 2, image=splash)
         window.update()
-        # Save the variables for later cleanup.
+
+        # Man speichert die Variablen um sie später gut zu löschen.
         self.__window = window
         self.__canvas = canvas
         self.__splash = splash
 
     def __exit__(self):
-        # Ensure that required time has passed.
-        now = time.clock()
-        if now < self.__wait:
-            time.sleep(self.__wait - now)
+        """
+        Diese Methode sorgt dafür, dass sich das Bild nach einer gewissen Zeit wieder schließt.
+        :return:
+        """
+        now = time.clock()  # die aktuelle Zeit wird hier gespeichert
+        if now < self.__wait:  # solange die aktuelle Zeit kleiner ist als (aktuelle Zeit+Wartezeit)
+            time.sleep(self.__wait - now) # in dieser Zeit ist wartet das Programm (psst, es schläft)
         # Free used resources in reverse order.
-        del self.__splash
-        self.__canvas.destroy()
-        self.__window.destroy()
-        # Give control back to the root program.
+        del self.__splash  # Splash wird gelöscht
+        self.__canvas.destroy()  # Cancas wird gelöscht
+        self.__window.destroy()  # Window wird gelöscht
+
+        # Gibt die Kontrolle zurück zum root Programm
         self.__root.update_idletasks()
         self.__root.deiconify()
