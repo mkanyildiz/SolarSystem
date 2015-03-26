@@ -35,8 +35,8 @@ class PlanetCreator():
         #rotation um die eigene achse
         glRotatef(5*zaehler, 0, 1, 0)
 
-        self.__view.txterde = self.__view.LoadTexture(texture)
-        self.__view.Sphere(1.5, self.__view.txterde)
+        self.__view.txterde = self.__view.loadTexture(texture)
+        self.__view.sphere(1.5, self.__view.txterde)
         self.zaehlerMoon += 1
         for x in range(0, monde):
             self.__moon.createMoon(self.zaehlerMoon,self.__distanzMond[x],self.__speedMoon[x])

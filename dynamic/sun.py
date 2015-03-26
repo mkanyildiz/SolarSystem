@@ -2,7 +2,7 @@ from dynamic.PlanetCreator import PlanetCreator
 
 from dynamic.texture import TextureCreator
 
-__author__ = 'Muhammed5'
+__author__ = 'Muhammed5, mdorfinger'
 
 from OpenGL.GL import *
 
@@ -58,8 +58,8 @@ class SunCreator(object):
             glPushMatrix()
             self.disableLight()
 
-            self.__view.txtsonne = self.__view.LoadTexture("./textures/sonne.jpg")
-            self.__view.Sphere(2, self.__view.txtsonne)
+            self.__view.txtsonne = self.__view.loadTexture("./textures/sonne.jpg")
+            self.__view.sphere(2, self.__view.txtsonne)
             self.showLight()
             glPopMatrix()
             for x in range(0, self.__anzPlanet):
