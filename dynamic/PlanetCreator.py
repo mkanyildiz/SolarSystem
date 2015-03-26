@@ -7,13 +7,22 @@ from OpenGL.GL import *
 
 
 class PlanetCreator():
+    """
+    Diese Klasse xyz
+    """
+
     __view = None
     __moon = None
     zaehlerMoon = None
     zaehler = 0
     __distanzMond = []
     __speedMoon = []
+
     def __init__(self):
+        """
+        Diese Methode setzt Standartwerte für verwendete Variablen.
+        :return:
+        """
         self.zaehlerMoon = None
         self.__view = TextureCreator()
         self.__moon = MoonCreator()
@@ -25,6 +34,15 @@ class PlanetCreator():
         #self.__moon = MoonCreator()
 
     def createPlanet(self,zaehler, abstand, speed, texture, monde):
+        """
+        Diese Methode xyz
+        :param zaehler:
+        :param abstand:
+        :param speed:
+        :param texture:
+        :param monde:
+        :return:
+        """
         #blau
         glPushMatrix()
 

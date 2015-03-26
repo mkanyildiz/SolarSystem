@@ -1,19 +1,33 @@
+__author__ = 'Muhammed5, mdorfinger'
+
 from OpenGL.GL import *
 
 from dynamic.texture import TextureCreator
 
 
-__author__ = 'Muhammed5, mdorfinger'
-
 class MoonCreator():
+    """
+    Diese Klasse xyz
+    """
+
     __view = None
 
     def __init__(self):
+        """
+        Diese Methode setzt Standartwerte für verwendete Variablen.
+        :return:
+        """
         self.__view = TextureCreator()
 
 
     def createMoon(self,zaehler,distanz,speed):
-
+        """
+        Diese Methode xyz
+        :param zaehler:
+        :param distanz:
+        :param speed:
+        :return:
+        """
         #Moon
         glPushMatrix()
         color = [0.211,0.211,0.211,1.]

@@ -8,6 +8,10 @@ from OpenGL.GL import *
 
 
 class SunCreator(object):
+    """
+    Diese Klasse xyz
+    """
+
     __view = None
     __planet = None
     __light = None
@@ -17,7 +21,13 @@ class SunCreator(object):
     __speed = []
     __texture = []
     __anzMonde = []
+
     def __init__(self,anzPlanet):
+        """
+        Diese Methode setzt Standartwerte für verwendete Variablen.
+        :param anzPlanet:
+        :return:
+        """
         self.__anzPlanet = anzPlanet
         self.__abstand = [5,10]
         self.__speed = [2,5]
@@ -31,18 +41,24 @@ class SunCreator(object):
 
 
     def disableLight(self):
-
+        """
+        Diese Methode deaktiviert das Licht, falls es aktiviert ist.
+        :return:
+        """
         glDisable(GL_LIGHTING)
         glDisable(GL_LIGHT0)
 
 
     def showLight(self):
+        """
+        Diese Methode aktiviert das Licht, falls es deaktiviert ist.
+        :return:
+        """
         glShadeModel(GL_SMOOTH)
         glEnable(GL_CULL_FACE)
         glEnable(GL_DEPTH_TEST)
         glEnable(GL_LIGHTING)
         glDepthFunc(GL_LESS)
-
 
         lightZeroColor = [0.8,1.0,0.8,1.0] #green tinged
         glLightfv(GL_LIGHT0, GL_POSITION, self.lightZeroPosition)
@@ -53,7 +69,11 @@ class SunCreator(object):
         glEnable(GL_LIGHT0)
 
     def createSun(self,zaehler):
-
+            """
+            Diese Methode xyz
+            :param zaehler:
+            :return:
+            """
             #Sonne
             glPushMatrix()
             self.disableLight()

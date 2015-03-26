@@ -1,15 +1,18 @@
+__author__ = 'mdorfinger, mkanyildiz'
+
 from dynamic.sun import SunCreator
 from dynamic.texture import TextureCreator
-
-
-__author__ = 'mdorfinger, mkanyildiz'
 
 import pygame
 from pygame.locals import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
 
+
 class Sonnensystem(object):
+    """
+    Diese Klasse erstellt ein pygame-Fenster, erstellt die Planeten und die Tastensteuerung wird hier ausprogrammiert.
+    """
     colorsun = None
     zaehler = 0
     sun = SunCreator(2)
@@ -62,7 +65,7 @@ class Sonnensystem(object):
                     if event.button == 4:
 
                         # Set the camera
-                        gluLookAt(0, 0,1,
+                        gluLookAt(0, 0, 1,
                                 0, 0,  0,
                                 0, 1,  0)
 
@@ -71,15 +74,15 @@ class Sonnensystem(object):
                     #Zoom out
                     if event.button == 5:
                             # Set the camera
-                        gluLookAt(0, 0,-1,
+                        gluLookAt(0, 0, -1,
                                 0, 0,  0,
                                 0, 1,  0)
 
-                        gluLookAt(0, 0,1,
+                        gluLookAt(0, 0, 1,
                             0, 0,  0,
                             0, 1,  0)
 
-                        gluLookAt(0, 0,-1,
+                        gluLookAt(0, 0, -1,
                                 0, 0,  0,
                                 0, 1,  0)
 
@@ -103,7 +106,7 @@ class Sonnensystem(object):
             self.sun.createSun(self.zaehler)
 
             if event.type == pygame.MOUSEBUTTONDOWN:
-                print(""+ str(pygame.MOUSEBUTTONDOWN))
+                # print(""+ str(pygame.MOUSEBUTTONDOWN)) TESTZWECKE
                 self.__texture.textureChange()
 
 
