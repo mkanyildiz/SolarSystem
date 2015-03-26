@@ -10,7 +10,7 @@ class Start:
     Diese Klasse startet das ganze Programm.
     """
 
-    root = tkinter.Tk()
+    root = tkinter.Tk() # tkinter braucht man für den Splashscreen
 
     s = Splashscreen(root, "./textures/splash.png", 2) # Splashscreen wird aufgerufen, Bild wird mitgegeben
     s.__enter__() # Enter Methode
