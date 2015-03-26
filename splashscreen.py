@@ -20,7 +20,8 @@ class Splashscreen:
         :param wait: die Zeit wielange das Bild angezeigt wird
         :return:
         """
-        self.__root = rootself.__file = file  # das Bild wird übergeben
+        self.__root = root  # tkinter wird übergeben
+        self.__file = file  # das bild wird übergeben
         self.__wait = wait + time.clock()  # aktuelle Zeit plus die aktuelle Zeit (damit es sich nach einer gewissen
         # Zeit wieder schließt
 
