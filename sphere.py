@@ -50,16 +50,9 @@ class Sonnensystem:
         glEnable(GL_LIGHTING)
         glEnable(GL_LIGHT0)
 
-    def LoadTexture(self, pic):
-        if pic == "erde":
-            # Bild auswaehlen
-            image = open("./textures/erde.jpg")
-        elif pic == "sonne":
-            image = open("./textures/sonne.jpg")
-        elif pic =="merkur":
-            image = open("./textures/merkur.jpg")
-        elif pic == "mond":
-            image = open("./textures/moon.jpg")
+    def LoadTexture(self, bild):
+
+        image = open(bild)
 
         # Textur
         ix = image.size[0]
@@ -94,10 +87,10 @@ class Sonnensystem:
             glEnable(GL_TEXTURE_2D)
             self.mod = False
 
-            self.txtmerkur = self.LoadTexture("merkur")
-            self.txtsonne = self.LoadTexture("sonne")
-            self.txterde = self.LoadTexture("erde")
-            self.txtmond  = self.LoadTexture("mond")
+            self.txtmerkur = self.LoadTexture("./textures/merkur.jpg")
+            self.txtsonne = self.LoadTexture("./textures/sonne.jpg")
+            self.txterde = self.LoadTexture("./textures/erde.jpg")
+            self.txtmond  = self.LoadTexture("./textures/moon.jpg")
         else:
             glDisable(GL_TEXTURE_2D)
             self.mod = True
@@ -182,7 +175,7 @@ class Sonnensystem:
             glPushMatrix()
             self.disableLight()
             self.colorsun
-            self.txtsonne = self.LoadTexture("sonne")
+            self.txtsonne = self.LoadTexture("./textures/sonne.jpg")
             self.Sphere(2, self.txtsonne)
             self.showLight()
             glPopMatrix()
@@ -196,7 +189,7 @@ class Sonnensystem:
 
             #rotation um die eigene achse
             glRotatef(5*zaehler, 0, 1, 0)
-            self.txterde = self.LoadTexture("erde")
+            self.txterde = self.LoadTexture("./textures/erde.jpg")
             self.Sphere(1.5, self.txterde)
             zaehlerMoon = zaehlerMoon+1
 
@@ -212,7 +205,7 @@ class Sonnensystem:
             #rotation um die eigene achse
             glRotatef(5*zaehlerMoon, 0, 1, 0)
 
-            self.txtmond = self.LoadTexture("mond")
+            self.txtmond = self.LoadTexture("./textures/moon.jpg")
             self.Sphere(0.5, self.txtmond)
             glPopMatrix()
 
@@ -229,7 +222,7 @@ class Sonnensystem:
             #rotation um die eigene achse
             glRotatef(3*zaehler, 0, 1, 0)
             glTranslatef(-10, 0, 0)
-            self.txtmerkur = self.LoadTexture("merkur")
+            self.txtmerkur = self.LoadTexture("./textures/merkur.jpg")
             self.Sphere(0.5, self.txtmerkur)
             glPopMatrix()
 

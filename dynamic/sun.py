@@ -21,7 +21,7 @@ class SunCreator(object):
         self.__anzPlanet = anzPlanet
         self.__abstand = [5,10]
         self.__speed = [2,5]
-        self.__texture = ["erde","merkur"]
+        self.__texture = ["./textures/erde.jpg","./textures/merkur.jpg"]
         self.__anzMonde = [1,2]
 
         self.__view = TextureCreator()
@@ -58,7 +58,7 @@ class SunCreator(object):
             glPushMatrix()
             self.disableLight()
 
-            self.__view.txtsonne = self.__view.LoadTexture("sonne")
+            self.__view.txtsonne = self.__view.LoadTexture("./textures/sonne.jpg")
             self.__view.Sphere(2, self.__view.txtsonne)
             self.showLight()
             glPopMatrix()
