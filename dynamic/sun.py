@@ -1,8 +1,8 @@
+__author__ = 'Muhammed5, mdorfinger'
+
 from dynamic.PlanetCreator import PlanetCreator
 
 from dynamic.texture import TextureCreator
-
-__author__ = 'Muhammed5, mdorfinger'
 
 from OpenGL.GL import *
 

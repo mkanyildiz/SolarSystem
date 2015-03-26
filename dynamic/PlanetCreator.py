@@ -1,8 +1,7 @@
-from dynamic.MoonCreator import MoonCreator
-from dynamic.texture import TextureCreator
-
 __author__ = 'Muhammed5'
 
+from dynamic.MoonCreator import MoonCreator
+from dynamic.texture import TextureCreator
 from OpenGL.GL import *
 
 
