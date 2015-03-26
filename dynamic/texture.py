@@ -1,6 +1,6 @@
 
 
-__author__ = 'Muhammed5'
+__author__ = 'Muhammed5, mdorfinger'
 
 
 from OpenGL.GL import *
@@ -13,43 +13,51 @@ class TextureCreator(object):
     __view = None
 
     def __init__(self):
+        """
+        Diese Methode setzt Standartwerte für verwendete Variablen.
+        :return:
+        """
 
         self.txtmerkur = None
         self.txterde = None
         self.txtsonne = None
         self.txtmond = None
         self.mod = True
-        #self.__view = Sonnensystem()
+        # self.__view = Sonnensystem()
 
 
-    def LoadTexture(self, pic):
-        if pic == "erde":
-            # Bild auswaehlen
-            image = open("./textures/erde.jpg")
-        elif pic == "sonne":
-            image = open("./textures/sonne.jpg")
-        elif pic =="merkur":
-            image = open("./textures/merkur.jpg")
-        elif pic == "mond":
-            image = open("./textures/moon.jpg")
+    def loadTexture(self, bild):
+        """
+        Diese Methode lädt die Texturen, die auf die Planeten gegeben werden
+        :param bild: den Pfad auf das bild welches man verwenden möchte
+        :return: die Textur ID
+        """
+
+        image = open(bild)
 
         # Textur
-        ix = image.size[0]
-        iy = image.size[1]
+        ix = image.size[0] # Größe der Textur (Horizontal)
+        iy = image.size[1] # Größe der Textur (Vertikal)
         image = image.tostring("raw", "RGBX", 0, -1)
 
         # Textur erstellen
         #glEnable(GL_TEXTURE_2D)
-        textures = glGenTextures(1)
-        glBindTexture(GL_TEXTURE_2D, textures)  # 2d texture (x and y size)
+        textures = glGenTextures(1) # Textur ID
+        glBindTexture(GL_TEXTURE_2D, textures)  # 2D Textur (x and y Größe)
 
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_NEAREST)
         gluBuild2DMipmaps(GL_TEXTURE_2D, 3, ix, iy, GL_RGBA, GL_UNSIGNED_BYTE, image)
 
-        return textures
+        return textures # ID wird zurückgegeben
 
-    def Sphere(self,radius, txt):
+    def sphere(self,radius, txt):
+        """
+        Diese Methode erstellt eine Sphere und legt eine Texur darauf.
+        :param radius: Der Radius der Sphere
+        :param txt: die Textur die auf die Sphere gelegt werden soll
+        :return:
+        """
 
         quadratic = gluNewQuadric()
 
@@ -62,14 +70,19 @@ class TextureCreator(object):
         #glutWireSphere(2,100,20)
 
     def textureChange(self):
+        """
+        Diese Methode ändert den Zustand der Textur zwischen eingeschalten und ausgeschalten.
+        :return:
+        """
+
         if self.mod is True:
             glEnable(GL_TEXTURE_2D)
             self.mod = False
 
-            self.txtmerkur = self.LoadTexture("merkur")
-            self.txtsonne = self.LoadTexture("sonne")
-            self.txterde = self.LoadTexture("erde")
-            self.txtmond  = self.LoadTexture("mond")
+            self.txtmerkur = self.loadTexture("./textures/merkur.jpg")
+            self.txtsonne = self.loadTexture("./textures/sonne.jpg")
+            self.txterde = self.loadTexture("./textures/erde.jpg")
+            self.txtmond  = self.loadTexture("./textures/moon.jpg")
         else:
             glDisable(GL_TEXTURE_2D)
             self.mod = True
