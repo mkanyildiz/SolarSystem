@@ -13,7 +13,7 @@ class Splashscreen:
 
     def __init__(self, root, file, wait):
         """
-        Diese Methode initialisiert die Parametet.
+        Diese Methode initialisiert die Parameter.
 
         :param root: tkinter muss übergeben werden
         :param file: das Bild das angezeigt wird
