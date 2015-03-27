@@ -32,8 +32,10 @@ class TextureCreator(object):
         :param bild: den Pfad auf das bild welches man verwenden möchte
         :return: die Textur ID
         """
-
-        image = open(bild)
+        try:
+            image = open(bild)
+        except:
+            print ("Unable to load image")
 
         # Textur
         ix = image.size[0] # Größe der Textur (Horizontal)

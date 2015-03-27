@@ -64,7 +64,8 @@ class Sonnensystem(object):
         self.colorsun = glColor3f(1, 1, 0)
         #diese whileschleife ist sehr wichtig für das refreshen der objekte
         while True:
-            #mit dieser forschleife können wir auf benutzer eingaben zugreifen und mit if unterscheidungen auf diese reagieren
+            #mit dieser forschleife können wir auf benutzer eingaben zugreifen und mit if unterscheidungen auf
+            # diese reagieren
             for event in pygame.event.get():
                 #beim fenster-schließen wird das ganze programm beendet
                 if event.type == pygame.QUIT:
@@ -114,7 +115,10 @@ class Sonnensystem(object):
                         gluLookAt(0, 1,0,
                                 0, 0,  0,
                                 0, 0,  1)
+                    if event.key == pygame.K_t:
+                        self.__texture.textureChange()
 
+<<<<<<< HEAD
                     if event.key == pygame.K_RIGHT:
                         self.__beschl += 1
                     if event.key == pygame.K_LEFT:
@@ -123,16 +127,16 @@ class Sonnensystem(object):
             #Die Variable Zaehler iwrd bei jedem durchgang hoch gezählt, diese Variable wird später
             #an die Klasse SOnne und von dort an die Klasse Planet weiter gegeben da der Planet sein Rotations Winkel ändern muss um sich drehen zu können
             self.zaehler += self.__beschl   #wir erhöhen die grad um der die planeten verschoben werden sollen je nachdem wie oft die taste rechts gedrückt wurde
+=======
+            # Die Variable Zaehler iwrd bei jedem durchgang hoch gezählt, diese Variable wird später
+            # an die Klasse SOnne und von dort an die Klasse Planet weiter gegeben da der Planet sein Rotations Winkel
+            # ändern muss um sich drehen zu können
+            self.zaehler = self.zaehler+1
+>>>>>>> ed1fac7005d2f8f851696e14c2d6199ab422c06a
 
             glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
             #die methode createSun wird aufgerufen
             self.sun.createSun(self.zaehler)
 
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                # print(""+ str(pygame.MOUSEBUTTONDOWN)) TESTZWECKE
-                self.__texture.textureChange()
-
-
             pygame.display.flip()
             pygame.time.wait(10)
-
