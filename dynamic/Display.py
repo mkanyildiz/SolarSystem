@@ -118,7 +118,6 @@ class Sonnensystem(object):
                     if event.key == pygame.K_t:
                         self.__texture.textureChange()
 
-<<<<<<< HEAD
                     if event.key == pygame.K_RIGHT:
                         self.__beschl += 1
                     if event.key == pygame.K_LEFT:
@@ -127,13 +126,12 @@ class Sonnensystem(object):
             #Die Variable Zaehler iwrd bei jedem durchgang hoch gezählt, diese Variable wird später
             #an die Klasse SOnne und von dort an die Klasse Planet weiter gegeben da der Planet sein Rotations Winkel ändern muss um sich drehen zu können
             self.zaehler += self.__beschl   #wir erhöhen die grad um der die planeten verschoben werden sollen je nachdem wie oft die taste rechts gedrückt wurde
-=======
+
             # Die Variable Zaehler iwrd bei jedem durchgang hoch gezählt, diese Variable wird später
             # an die Klasse SOnne und von dort an die Klasse Planet weiter gegeben da der Planet sein Rotations Winkel
             # ändern muss um sich drehen zu können
             self.zaehler = self.zaehler+1
->>>>>>> ed1fac7005d2f8f851696e14c2d6199ab422c06a
-
+            
             glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
             #die methode createSun wird aufgerufen
             self.sun.createSun(self.zaehler)
