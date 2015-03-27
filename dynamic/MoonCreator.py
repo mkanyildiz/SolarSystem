@@ -20,7 +20,7 @@ class MoonCreator():
         self.__view = TextureCreator()
 
 
-    def createMoon(self,zaehler,distanz,speed):
+    def createMoon(self,zaehler,distanz,speed,size):
         """
         Diese Methode xyz
         :param zaehler: ist für die Rotation zuständig. Bei jedem durchlauf der while schleife wird diese variable hochgezählt und der Rotationswinkel wird geändert dadurch wird das Rotieren ermöglicht
@@ -42,6 +42,6 @@ class MoonCreator():
 
         #anzeigen der texturen
         self.__view.txtmond = self.__view.loadTexture("./textures/moon.jpg")
-        self.__view.sphere(0.2, self.__view.txtmond)
+        self.__view.sphere(size, self.__view.txtmond)
         glPopMatrix()
 

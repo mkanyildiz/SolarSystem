@@ -21,6 +21,7 @@ class SunCreator(object):
     __speed = []
     __texture = []
     __anzMonde = []
+    __planetSize = []
 
     def __init__(self,anzPlanet):
         """
@@ -29,14 +30,16 @@ class SunCreator(object):
         :return:
         """
         self.__anzPlanet = anzPlanet
-        self.__abstand = [5,10]
+        self.__abstand = [10.7,16.3]
         self.__speed = [2,5]
         self.__texture = ["./textures/erde.jpg","./textures/merkur.jpg"]
         self.__anzMonde = [1,2]
+        self.__planetSize = [0.91,0.49]
 
         self.__view = TextureCreator()
         self.__planet = PlanetCreator()
         self.lightZeroPosition = [0.,0.,0.,1]
+
 
 
 
@@ -79,7 +82,7 @@ class SunCreator(object):
             self.disableLight()
 
             self.__view.txtsonne = self.__view.loadTexture("./textures/sonne.jpg")
-            self.__view.sphere(2, self.__view.txtsonne)
+            self.__view.sphere(5, self.__view.txtsonne)
             self.showLight()        # das licht wird hier aktiviert da wir das licht anstelle der Sonne haben wollen
                                     #dies geschieht dadurch indem wir die belichtung mit der sonne im push und pop erstellen
             glPopMatrix()
@@ -92,4 +95,5 @@ class SunCreator(object):
                     zaehler,self.__abstand[x],
                     self.__speed[x],
                     self.__texture[x],
-                    self.__anzMonde[x])
+                    self.__anzMonde[x],
+                    self.__planetSize[x])
