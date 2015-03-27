@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="499f99e8-00ed-4ae6-8b07-c9651edd332d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/DisplayTest.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/textures/erde.jpg" afterPath="$PROJECT_DIR$/textures/erde.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/textures/merkur.jpg" afterPath="$PROJECT_DIR$/textures/merkur.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/textures/moon.jpg" afterPath="$PROJECT_DIR$/textures/moon.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/protokoll.docx" afterPath="$PROJECT_DIR$/doc/protokoll.docx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/textures/sonne.jpg" afterPath="$PROJECT_DIR$/textures/sonne.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dynamic/Display.py" afterPath="$PROJECT_DIR$/dynamic/Display.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dynamic/PlanetCreator.py" afterPath="$PROJECT_DIR$/dynamic/PlanetCreator.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dynamic/SunCreator.py" afterPath="$PROJECT_DIR$/dynamic/SunCreator.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/start.py" afterPath="$PROJECT_DIR$/start.py" />
     </list>
     <ignored path="SolarSystem.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,7 +28,7 @@
     <SUITE FILE_PATH="coverage/SolarSystem$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1427066067596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/SolarSystem$MyController.coverage" NAME="MyController Coverage Results" MODIFIED="1427223424902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SolarSystem$openglwindow.coverage" NAME="openglwindow Coverage Results" MODIFIED="1425084560944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:/Python34/Lib/site-packages/PyQt5/examples/opengl" />
-    <SUITE FILE_PATH="coverage/SolarSystem$start.coverage" NAME="start Coverage Results" MODIFIED="1427478973029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SolarSystem$start.coverage" NAME="start Coverage Results" MODIFIED="1427479338084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SolarSystem$Unittests_in_DisplayTest.coverage" NAME="Unittests in DisplayTest Coverage Results" MODIFIED="1427478702879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcases" />
     <SUITE FILE_PATH="coverage/SolarSystem$grabber.coverage" NAME="grabber Coverage Results" MODIFIED="1425084696208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:/Python34/Lib/site-packages/PyQt5/examples/opengl" />
     <SUITE FILE_PATH="coverage/SolarSystem$start__1_.coverage" NAME="start (1) Coverage Results" MODIFIED="1427317773710" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dynamic" />
@@ -56,8 +58,8 @@
       <file leaf-file-name="SunCreator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dynamic/SunCreator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1046" max-vertical-offset="1785">
-              <caret line="91" column="14" selection-start-line="91" selection-start-column="14" selection-end-line="91" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1199" max-vertical-offset="1785">
+              <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -93,11 +95,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlanetCreator.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PlanetCreator.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dynamic/PlanetCreator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="451" max-vertical-offset="1173">
-              <caret line="45" column="11" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.59385663" vertical-offset="553" max-vertical-offset="1173">
+              <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -113,11 +115,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Display.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Display.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dynamic/Display.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.8993174" vertical-offset="1046" max-vertical-offset="2618">
-              <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2032" max-vertical-offset="2618">
+              <caret line="137" column="14" selection-start-line="137" selection-start-column="13" selection-end-line="137" selection-end-column="14" />
               <folding>
                 <element signature="e#39#80#0" expanded="true" />
               </folding>
@@ -128,7 +130,7 @@
       <file leaf-file-name="DisplayTest.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testcases/DisplayTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+            <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="459">
               <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
@@ -138,7 +140,7 @@
       <file leaf-file-name="start.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/start.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="629">
+            <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="646">
               <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
                 <element signature="e#26#52#0" expanded="true" />
@@ -189,10 +191,10 @@
         <option value="$PROJECT_DIR$/dynamic/code.rst" />
         <option value="$PROJECT_DIR$/code.rst" />
         <option value="$PROJECT_DIR$/dynamic/MoonCreator.py" />
-        <option value="$PROJECT_DIR$/dynamic/PlanetCreator.py" />
         <option value="$PROJECT_DIR$/dynamic/SunCreator.py" />
         <option value="$PROJECT_DIR$/testcases/DisplayTest.py" />
         <option value="$PROJECT_DIR$/dynamic/Display.py" />
+        <option value="$PROJECT_DIR$/dynamic/PlanetCreator.py" />
       </list>
     </option>
   </component>
@@ -227,7 +229,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -276,6 +277,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -678,7 +680,6 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32725322" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32944915" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21504237" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -689,6 +690,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32944915" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -759,7 +761,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1513">
           <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -992,7 +993,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1513">
           <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1000,7 +1000,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4522">
           <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1059,22 +1058,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dynamic/PlanetCreator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="451" max-vertical-offset="1173">
-          <caret line="45" column="11" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dynamic/SunCreator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1046" max-vertical-offset="1785">
-          <caret line="91" column="14" selection-start-line="91" selection-start-column="14" selection-end-line="91" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/start.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="629">
@@ -1087,11 +1070,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dynamic/Display.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8993174" vertical-offset="1046" max-vertical-offset="2618">
-          <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2032" max-vertical-offset="2618">
+          <caret line="137" column="14" selection-start-line="137" selection-start-column="13" selection-end-line="137" selection-end-column="14" />
           <folding>
             <element signature="e#39#80#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dynamic/SunCreator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1199" max-vertical-offset="1785">
+          <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dynamic/PlanetCreator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59385663" vertical-offset="553" max-vertical-offset="1173">
+          <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>

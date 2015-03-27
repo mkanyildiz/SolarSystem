@@ -53,7 +53,7 @@ class PlanetCreator():
         glTranslatef(-abstand, 0, 0)        #und dann um die gewünschte distanz verschieben
 
         #rotation um die eigene achse
-        glRotatef(5*zaehler, 0, 1, 0)
+        glRotatef(5*self.zaehlerMoon, 0, 1, 0)
 
         self.__view.txterde = self.__view.loadTexture(texture)
         self.__view.sphere(size, self.__view.txterde)

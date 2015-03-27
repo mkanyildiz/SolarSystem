@@ -132,9 +132,9 @@ class Sonnensystem(object):
                     if event.key == pygame.K_LEFT:
                         self.__beschl -= 1
 
-            # Die Variable Zaehler iwrd bei jedem durchgang hoch gezählt, diese Variable wird später
-            # an die Klasse SOnne und von dort an die Klasse Planet weiter gegeben da der Planet sein Rotations Winkel
-            # ändern muss um sich drehen zu können
+
+            #Die Variable Zaehler iwrd bei jedem durchgang hoch gezählt, diese Variable wird später
+            #an die Klasse SOnne und von dort an die Klasse Planet weiter gegeben da der Planet sein Rotations Winkel ändern muss um sich drehen zu können
             self.zaehler += self.__beschl   #wir erhöhen die grad um der die planeten verschoben werden sollen je nachdem wie oft die taste rechts gedrückt wurde
 
 
