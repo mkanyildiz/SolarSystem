@@ -77,6 +77,11 @@ class SunCreator(object):
             :param zaehler: die variable zaehler sorgt dafür dass die Planet sich auch drehen und nicht an einer stelle stehen bleiben
             :return:
             """
+            if isinstance(self.__anzPlanet, int):
+                if self.__anzPlanet == 0:
+                    raise ZeroDivisionError("Ein Sonnensystem besteht mindestens aus einem Planeten")
+            else:
+                raise TypeError("Only Integer allowed")
             #Sonne
             glPushMatrix()
             self.disableLight()

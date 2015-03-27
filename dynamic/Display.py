@@ -14,11 +14,11 @@ class Sonnensystem(object):
     Diese Klasse erstellt ein pygame-Fenster, erstellt die Planeten und die Tastensteuerung wird hier ausprogrammiert.
     """
     colorsun = None
-    zaehler2 = 0
     zaehler = 0
     sun = SunCreator(2)
     __beschl = 0
     __texture = None
+    __vogelPersp = None
 
     def __init__(self):
         """
@@ -26,13 +26,17 @@ class Sonnensystem(object):
         :param anzPlanet: Die anzahl der Planeten die gezeichnet werden müssen
         :return:
         """
-        self.zaehler2 = 0
+
         self.zaehler = 0
         self.__beschl = 1
+        self.__vogelPersp = False
         self.sun = SunCreator(2)
         self.__texture = TextureCreator()
 
+
     def main(self):
+       # if isinstance((self.zaehler,self.__beschl), int) and isinstance(self.__vogelPersp, bool):
+
         """
         Diese Methode ist für die Visualisierung der Elemente zuständlich hier enden alle Objekte
         :return:
@@ -55,7 +59,7 @@ class Sonnensystem(object):
         #glTranslatef(-4,0, -50)
         gluLookAt(	0, 0, -50,
                     0, 0,  0,
-                    0, 1,  1)
+                    0, 1.0,  1.0)
         #glRotatef(0, 2, 1, 0)
         glTranslatef(0,1,0.0)
 
@@ -78,11 +82,11 @@ class Sonnensystem(object):
 
                     #Zoom in
                     if event.button == 4:
-
-                        # Set the camera
-                        gluLookAt(0, 0, 1,
-                                0, 0,  0,
-                                0, 1,  0)
+                        if self.__vogelPersp == False:
+                            # Set the camera
+                            gluLookAt(0, 0, 1,
+                                    0, 0,  0,
+                                    0, 1,  0)
 
                         #glRotatef(90, 2, 1, 0)
 
@@ -112,27 +116,27 @@ class Sonnensystem(object):
                         self.colorsun = glColor3f(1, 1, 0)
 
                     if event.key == pygame.K_w:
+                        if self.__vogelPersp == False:
+                            self.__vogelPersp = True
+                        elif self.__vogelPersp == True:
+                            self.__vogelPersp = False
                         gluLookAt(0, 1,0,
                                 0, 0,  0,
                                 0, 0,  1)
                     if event.key == pygame.K_t:
                         self.__texture.textureChange()
 
-<<<<<<< HEAD
+
                     if event.key == pygame.K_RIGHT:
                         self.__beschl += 1
                     if event.key == pygame.K_LEFT:
                         self.__beschl -= 1
 
-            #Die Variable Zaehler iwrd bei jedem durchgang hoch gezählt, diese Variable wird später
-            #an die Klasse SOnne und von dort an die Klasse Planet weiter gegeben da der Planet sein Rotations Winkel ändern muss um sich drehen zu können
-            self.zaehler += self.__beschl   #wir erhöhen die grad um der die planeten verschoben werden sollen je nachdem wie oft die taste rechts gedrückt wurde
-=======
             # Die Variable Zaehler iwrd bei jedem durchgang hoch gezählt, diese Variable wird später
             # an die Klasse SOnne und von dort an die Klasse Planet weiter gegeben da der Planet sein Rotations Winkel
             # ändern muss um sich drehen zu können
-            self.zaehler = self.zaehler+1
->>>>>>> ed1fac7005d2f8f851696e14c2d6199ab422c06a
+            self.zaehler += self.__beschl   #wir erhöhen die grad um der die planeten verschoben werden sollen je nachdem wie oft die taste rechts gedrückt wurde
+
 
             glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
             #die methode createSun wird aufgerufen
@@ -140,3 +144,5 @@ class Sonnensystem(object):
 
             pygame.display.flip()
             pygame.time.wait(10)
+           # else:
+            #    raise TypeError
