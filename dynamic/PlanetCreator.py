@@ -35,26 +35,28 @@ class PlanetCreator():
     def createPlanet(self,zaehler, abstand, speed, texture, monde):
         """
         Diese Methode xyz
-        :param zaehler:
-        :param abstand:
-        :param speed:
-        :param texture:
-        :param monde:
+        :param zaehler: ist für die Rotation zuständig. Bei jedem durchlauf der while schleife wird diese variable hochgezählt und der Rotationswinkel wird geändert dadurch wird das Rotieren ermöglicht
+        :param abstand: distanz zwischen planet und Sonne
+        :param speed: Rotations egschwindigkeit wird übergeben
+        :param texture: die art der Textur (Erde, Merkur)
+        :param monde: anzahl der Monde
         :return:
         """
         #blau
         glPushMatrix()
 
         #rotation um die Sonne
-        glRotatef(speed*zaehler, 0, 1, 0)
-        glTranslatef(-abstand, 0, 0)
+        glRotatef(speed*zaehler, 0, 1, 0)   #zuerst rotieren
+        glTranslatef(-abstand, 0, 0)        #und dann um die gewünschte distanz verschieben
 
         #rotation um die eigene achse
         glRotatef(5*zaehler, 0, 1, 0)
 
         self.__view.txterde = self.__view.loadTexture(texture)
         self.__view.sphere(1.5, self.__view.txterde)
-        self.zaehlerMoon += 1
+        self.zaehlerMoon += 1                           #Die Variable Zaehler iwrd bei jedem durchgang hoch gezählt, diese Variable wird später
+                                                        #an die Klasse Mond weiter gegeben da der Mond sein Rotations Winkel ändern muss um sich drehen zu können
+
         for x in range(0, monde):
             self.__moon.createMoon(self.zaehlerMoon,self.__distanzMond[x],self.__speedMoon[x])
 

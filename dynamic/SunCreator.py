@@ -25,7 +25,7 @@ class SunCreator(object):
     def __init__(self,anzPlanet):
         """
         Diese Methode setzt Standartwerte für verwendete Variablen.
-        :param anzPlanet:
+        :param anzPlanet: Die anzahl der Planeten die gezeichnet werden müssen
         :return:
         """
         self.__anzPlanet = anzPlanet
@@ -71,7 +71,7 @@ class SunCreator(object):
     def createSun(self,zaehler):
             """
             Diese Methode xyz
-            :param zaehler:
+            :param zaehler: die variable zaehler sorgt dafür dass die Planet sich auch drehen und nicht an einer stelle stehen bleiben
             :return:
             """
             #Sonne
@@ -80,9 +80,14 @@ class SunCreator(object):
 
             self.__view.txtsonne = self.__view.loadTexture("./textures/sonne.jpg")
             self.__view.sphere(2, self.__view.txtsonne)
-            self.showLight()
+            self.showLight()        # das licht wird hier aktiviert da wir das licht anstelle der Sonne haben wollen
+                                    #dies geschieht dadurch indem wir die belichtung mit der sonne im push und pop erstellen
             glPopMatrix()
-            for x in range(0, self.__anzPlanet):
+
+            #Hier zeichen wir N Planeten
+            for x in range(0, self.__anzPlanet):    # die forschleife ruft je nachdem wieviel planeten wir haben wollen die Metjode createPlanet auf
+               #Die Paramter für die Methode sind wie folgt
+               # Rotationsvariable-distanz zwischen Sonne und Planet-Geschwindigkeit der drehung-die textur bez-anzahl der Monde
                 self.__planet.createPlanet(
                     zaehler,self.__abstand[x],
                     self.__speed[x],

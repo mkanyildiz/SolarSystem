@@ -1,7 +1,7 @@
 __author__ = 'mdorfinger'
 from splashscreen import *
 import tkinter
-from dynamic.sphere2 import *
+from dynamic.Display import *
 
 
 class Start:

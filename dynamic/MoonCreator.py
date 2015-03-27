@@ -23,9 +23,9 @@ class MoonCreator():
     def createMoon(self,zaehler,distanz,speed):
         """
         Diese Methode xyz
-        :param zaehler:
-        :param distanz:
-        :param speed:
+        :param zaehler: ist für die Rotation zuständig. Bei jedem durchlauf der while schleife wird diese variable hochgezählt und der Rotationswinkel wird geändert dadurch wird das Rotieren ermöglicht
+        :param distanz: distanz zwischen mond und planet
+        :param speed:   geschwindigkeit der rotation um den Planeten
         :return:
         """
         #Moon
@@ -34,12 +34,13 @@ class MoonCreator():
         glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
 
         #Rotation um den Planeten
-        glRotatef(speed* zaehler, 0, 1, 0)
-        glTranslatef(-distanz, 0, 0)
+        glRotatef(speed* zaehler, 0, 1, 0) #zuerst wird rotiert
+        glTranslatef(-distanz, 0, 0)       # und dann um die gewünschte distanz verschoben
 
         #rotation um die eigene achse
-        glRotatef(5* zaehler, 0, 1, 0)
+        glRotatef(5* zaehler, 0, 1, 0)     #rotation um die eigene Achse
 
+        #anzeigen der texturen
         self.__view.txtmond = self.__view.loadTexture("./textures/moon.jpg")
         self.__view.sphere(0.2, self.__view.txtmond)
         glPopMatrix()
