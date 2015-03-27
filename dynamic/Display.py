@@ -64,7 +64,8 @@ class Sonnensystem(object):
         self.colorsun = glColor3f(1, 1, 0)
         #diese whileschleife ist sehr wichtig für das refreshen der objekte
         while True:
-            #mit dieser forschleife können wir auf benutzer eingaben zugreifen und mit if unterscheidungen auf diese reagieren
+            #mit dieser forschleife können wir auf benutzer eingaben zugreifen und mit if unterscheidungen auf
+            # diese reagieren
             for event in pygame.event.get():
                 #beim fenster-schließen wird das ganze programm beendet
                 if event.type == pygame.QUIT:
@@ -112,20 +113,17 @@ class Sonnensystem(object):
                         gluLookAt(0, 1,0,
                                 0, 0,  0,
                                 0, 0,  1)
+                    if event.key == pygame.K_t:
+                        self.__texture.textureChange()
 
-            #Die Variable Zaehler iwrd bei jedem durchgang hoch gezählt, diese Variable wird später
-            #an die Klasse SOnne und von dort an die Klasse Planet weiter gegeben da der Planet sein Rotations Winkel ändern muss um sich drehen zu können
+            # Die Variable Zaehler iwrd bei jedem durchgang hoch gezählt, diese Variable wird später
+            # an die Klasse SOnne und von dort an die Klasse Planet weiter gegeben da der Planet sein Rotations Winkel
+            # ändern muss um sich drehen zu können
             self.zaehler = self.zaehler+1
 
             glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
             #die methode createSun wird aufgerufen
             self.sun.createSun(self.zaehler)
 
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                # print(""+ str(pygame.MOUSEBUTTONDOWN)) TESTZWECKE
-                self.__texture.textureChange()
-
-
             pygame.display.flip()
             pygame.time.wait(10)
-
