@@ -28,20 +28,26 @@ class MoonCreator():
         :param speed:   geschwindigkeit der rotation um den Planeten
         :return:
         """
-        #Moon
-        glPushMatrix()
-        color = [0.211,0.211,0.211,1.]
-        glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
+        if isinstance(size, (int,float)):
+            if size == 0:
+                raise ZeroDivisionError("größe muss größer 0 sein")
+            else:
+                #Moon
+                glPushMatrix()
+                color = [0.211,0.211,0.211,1.]
+                glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
 
-        #Rotation um den Planeten
-        glRotatef(speed* zaehler, 0, 1, 0) #zuerst wird rotiert
-        glTranslatef(-distanz, 0, 0)       # und dann um die gewünschte distanz verschoben
+                #Rotation um den Planeten
+                glRotatef(speed* zaehler, 0, 1, 0) #zuerst wird rotiert
+                glTranslatef(-distanz, 0, 0)       # und dann um die gewünschte distanz verschoben
 
-        #rotation um die eigene achse
-        glRotatef(5* zaehler, 0, 1, 0)     #rotation um die eigene Achse
+                #rotation um die eigene achse
+                glRotatef(5* zaehler, 0, 1, 0)     #rotation um die eigene Achse
 
-        #anzeigen der texturen
-        self.__view.txtmond = self.__view.loadTexture("./textures/moon.jpg")
-        self.__view.sphere(size, self.__view.txtmond)
-        glPopMatrix()
+                #anzeigen der texturen
+                self.__view.txtmond = self.__view.loadTexture("./textures/moon.jpg")
+                self.__view.sphere(size, self.__view.txtmond)
+                glPopMatrix()
+        else:
+            raise TypeError
 

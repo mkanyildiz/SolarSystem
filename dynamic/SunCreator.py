@@ -23,13 +23,13 @@ class SunCreator(object):
     __anzMonde = []
     __planetSize = []
 
-    def __init__(self,anzPlanet):
+    def __init__(self):
         """
         Diese Methode setzt Standartwerte für verwendete Variablen.
         :param anzPlanet: Die anzahl der Planeten die gezeichnet werden müssen
         :return:
         """
-        self.__anzPlanet = anzPlanet
+
         self.__abstand = [10.7,16.3]
         self.__speed = [2,5]
         self.__texture = ["./textures/erde.jpg","./textures/merkur.jpg"]
@@ -71,34 +71,37 @@ class SunCreator(object):
         glEnable(GL_LIGHTING)
         glEnable(GL_LIGHT0)
 
-    def createSun(self,zaehler):
+    def createSun(self,zaehler,sizeSonne,planetData,moonData):
             """
             Diese Methode xyz
             :param zaehler: die variable zaehler sorgt dafür dass die Planet sich auch drehen und nicht an einer stelle stehen bleiben
             :return:
             """
-            if isinstance(self.__anzPlanet, int):
-                if self.__anzPlanet == 0:
+            if isinstance(planetData[0], int):
+                if planetData[0] == 0:
                     raise ZeroDivisionError("Ein Sonnensystem besteht mindestens aus einem Planeten")
+                else:
+                    #Sonne
+                    glPushMatrix()
+                    self.disableLight()
+
+                    self.__view.txtsonne = self.__view.loadTexture("./textures/sonne.jpg")
+                    self.__view.sphere(sizeSonne, self.__view.txtsonne)
+                    self.showLight()        # das licht wird hier aktiviert da wir das licht anstelle der Sonne haben wollen
+                                            #dies geschieht dadurch indem wir die belichtung mit der sonne im push und pop erstellen
+                    glPopMatrix()
+
+                    #Hier zeichen wir N Planeten
+                    for x in range(0, planetData[0]):    # die forschleife ruft je nachdem wieviel planeten wir haben wollen die Metjode createPlanet auf
+                       #Die Paramter für die Methode sind wie folgt
+                       # Rotationsvariable-distanz zwischen Sonne und Planet-Geschwindigkeit der drehung-die textur bez-anzahl der Monde
+                        self.__planet.createPlanet(
+                            zaehler,
+                            planetData[1][x],
+                            planetData[2][x],
+                            planetData[3][x],
+                            planetData[4][x],
+                            planetData[5][x],
+                            moonData)
             else:
                 raise TypeError("Only Integer allowed")
-            #Sonne
-            glPushMatrix()
-            self.disableLight()
-
-            self.__view.txtsonne = self.__view.loadTexture("./textures/sonne.jpg")
-            self.__view.sphere(5, self.__view.txtsonne)
-            self.showLight()        # das licht wird hier aktiviert da wir das licht anstelle der Sonne haben wollen
-                                    #dies geschieht dadurch indem wir die belichtung mit der sonne im push und pop erstellen
-            glPopMatrix()
-
-            #Hier zeichen wir N Planeten
-            for x in range(0, self.__anzPlanet):    # die forschleife ruft je nachdem wieviel planeten wir haben wollen die Metjode createPlanet auf
-               #Die Paramter für die Methode sind wie folgt
-               # Rotationsvariable-distanz zwischen Sonne und Planet-Geschwindigkeit der drehung-die textur bez-anzahl der Monde
-                self.__planet.createPlanet(
-                    zaehler,self.__abstand[x],
-                    self.__speed[x],
-                    self.__texture[x],
-                    self.__anzMonde[x],
-                    self.__planetSize[x])
