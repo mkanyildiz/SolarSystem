@@ -29,25 +29,30 @@ class MoonCreator():
         :return:
         """
         if isinstance(size, (int,float)):
-            if size == 0:
-                raise ZeroDivisionError("größe muss größer 0 sein")
+            if size <= 0:
+                raise ZeroDivisionError("Mond muss größer 0 sein")
+            elif isinstance(distanz,(int,float)):
+                if isinstance(speed,(int,float)):
+                    #Moon
+                    glPushMatrix()
+                    color = [0.211,0.211,0.211,1.]
+                    glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
+
+                    #Rotation um den Planeten
+                    glRotatef(speed* zaehler, 0, 1, 0) #zuerst wird rotiert
+                    glTranslatef(-distanz, 0, 0)       # und dann um die gewünschte distanz verschoben
+
+                    #rotation um die eigene achse
+                    glRotatef(5* zaehler, 0, 1, 0)     #rotation um die eigene Achse
+
+                    #anzeigen der texturen
+                    self.__view.txtmond = self.__view.loadTexture("./textures/moon.jpg")
+                    self.__view.sphere(size, self.__view.txtmond)
+                    glPopMatrix()
+                else:
+                    raise TypeError("ONLY INTEGER OR FLOAT VALUES ARE ALLOWED")
             else:
-                #Moon
-                glPushMatrix()
-                color = [0.211,0.211,0.211,1.]
-                glMaterialfv(GL_FRONT,GL_DIFFUSE,color)
-
-                #Rotation um den Planeten
-                glRotatef(speed* zaehler, 0, 1, 0) #zuerst wird rotiert
-                glTranslatef(-distanz, 0, 0)       # und dann um die gewünschte distanz verschoben
-
-                #rotation um die eigene achse
-                glRotatef(5* zaehler, 0, 1, 0)     #rotation um die eigene Achse
-
-                #anzeigen der texturen
-                self.__view.txtmond = self.__view.loadTexture("./textures/moon.jpg")
-                self.__view.sphere(size, self.__view.txtmond)
-                glPopMatrix()
+                raise TypeError("ONLY INTEGER OR FLOAT VALUES ARE ALLOWED")
         else:
-            raise TypeError
+            raise TypeError("ONLY INTEGER OR FLOAT VALUES ARE ALLOWED")
 

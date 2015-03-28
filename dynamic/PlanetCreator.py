@@ -1,3 +1,6 @@
+import string
+from docutils.utils.roman import OutOfRangeError
+
 __author__ = 'Muhammed5'
 
 from dynamic.MoonCreator import MoonCreator
@@ -42,29 +45,42 @@ class PlanetCreator():
         :return:
         """
         if isinstance(size, (int,float)):
-            if size == 0:
-                raise ZeroDivisionError("größe muss größer 0 sein")
+            if size <= 0:
+                raise ZeroDivisionError("Size muss größer 0 sein")
+            elif isinstance(abstand,(int,float)):
+                if isinstance(speed,(int,float)):
+                    if isinstance(monde,(int)):
+                        if monde < 0:
+                            raise OutOfRangeError("monde muss größer 0 sein")
+                        elif isinstance(texture, str):
+                            #blau
+                            glPushMatrix()
+
+                            #rotation um die Sonne
+                            glRotatef(speed*zaehler, 0, 1, 0)   #zuerst rotieren
+                            glTranslatef(-abstand, 0, 0)        #und dann um die gewünschte distanz verschieben
+
+                            #rotation um die eigene achse
+                            glRotatef(5*self.zaehlerMoon, 0, 1, 0)
+
+                            self.__view.txterde = self.__view.loadTexture(texture)
+                            self.__view.sphere(size, self.__view.txterde)
+                            self.zaehlerMoon += 1                           #Die Variable Zaehler iwrd bei jedem durchgang hoch gezählt, diese Variable wird später
+                                                                            #an die Klasse Mond weiter gegeben da der Mond sein Rotations Winkel ändern muss um sich drehen zu können
+
+                            for x in range(0, monde):
+                                self.__moon.createMoon(self.zaehlerMoon,
+                                                       moonData[0][x],
+                                                       moonData[1][x],
+                                                       moonData[2][x])
+                            glPopMatrix()
+                        else:
+                            raise TypeError("ONLY STRING VALUES ARE ALLOWED AS TEXTURE PARAMETER")
+                    else:
+                        raise TypeError("ONLY INTEGER VALUES ARE ALLOWED")
+                else:
+                    raise TypeError("ONLY INTEGER OR FLOAT VALUES ARE ALLOWED")
             else:
-                #blau
-                glPushMatrix()
-
-                #rotation um die Sonne
-                glRotatef(speed*zaehler, 0, 1, 0)   #zuerst rotieren
-                glTranslatef(-abstand, 0, 0)        #und dann um die gewünschte distanz verschieben
-
-                #rotation um die eigene achse
-                glRotatef(5*self.zaehlerMoon, 0, 1, 0)
-
-                self.__view.txterde = self.__view.loadTexture(texture)
-                self.__view.sphere(size, self.__view.txterde)
-                self.zaehlerMoon += 1                           #Die Variable Zaehler iwrd bei jedem durchgang hoch gezählt, diese Variable wird später
-                                                                #an die Klasse Mond weiter gegeben da der Mond sein Rotations Winkel ändern muss um sich drehen zu können
-
-                for x in range(0, monde):
-                    self.__moon.createMoon(self.zaehlerMoon,
-                                           moonData[0][x],
-                                           moonData[1][x],
-                                           moonData[2][x])
-                glPopMatrix()
+                raise TypeError("ONLY INTEGER OR FLOAT VALUES ARE ALLOWED")
         else:
-            raise TypeError
+            raise TypeError("ONLY INTEGER OR FLOAT VALUES ARE ALLOWED")

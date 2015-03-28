@@ -54,6 +54,7 @@ class TextureCreator(object):
             gluBuild2DMipmaps(GL_TEXTURE_2D, 3, ix, iy, GL_RGBA, GL_UNSIGNED_BYTE, image)
 
             return textures # ID wird zurückgegeben
+
     def sphere(self, radius, txt):
         """
         Diese Methode erstellt eine Sphere und legt eine Texur darauf.
