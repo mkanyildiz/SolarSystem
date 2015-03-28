@@ -15,11 +15,7 @@ class PlanetCreator():
 
     __view = None
     __moon = None
-    zaehlerMoon = None
-    zaehler = 0
-    __distanzMond = []
-    __speedMoon = []
-    __sizeMond = []
+
 
     def __init__(self):
         """
@@ -29,7 +25,7 @@ class PlanetCreator():
         self.zaehlerMoon = None
         self.__view = TextureCreator()
         self.__moon = MoonCreator()
-        self.zaehlerMoon =0
+
 
 
         #self.__moon = MoonCreator()
@@ -61,15 +57,13 @@ class PlanetCreator():
                             glTranslatef(-abstand, 0, 0)        #und dann um die gewünschte distanz verschieben
 
                             #rotation um die eigene achse
-                            glRotatef(5*self.zaehlerMoon, 0, 1, 0)
+                            glRotatef(24*zaehler, 0, 1, 0)
 
                             self.__view.txterde = self.__view.loadTexture(texture)
                             self.__view.sphere(size, self.__view.txterde)
-                            self.zaehlerMoon += 1                           #Die Variable Zaehler iwrd bei jedem durchgang hoch gezählt, diese Variable wird später
-                                                                            #an die Klasse Mond weiter gegeben da der Mond sein Rotations Winkel ändern muss um sich drehen zu können
 
                             for x in range(0, monde):
-                                self.__moon.createMoon(self.zaehlerMoon,
+                                self.__moon.createMoon(zaehler,
                                                        moonData[0][x],
                                                        moonData[1][x],
                                                        moonData[2][x])

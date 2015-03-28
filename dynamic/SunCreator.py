@@ -16,12 +16,7 @@ class SunCreator(object):
     __planet = None
     __light = None
     lightZeroPosition = []
-    __anzPlanet = 0
-    __abstand = []
-    __speed = []
-    __texture = []
-    __anzMonde = []
-    __planetSize = []
+
 
     def __init__(self):
         """
