@@ -81,7 +81,9 @@ class SunCreator(object):
                     self.disableLight()
 
                     self.__view.txtsonne = self.__view.loadTexture("./textures/sonne.jpg")
+                    glRotate(90, 1, 0, 0)#um die texuren zu fixen müssen wir unser sphere drehen
                     self.__view.sphere(sizeSonne, self.__view.txtsonne)
+                    glRotate(-90, 1, 0, 0)
                     self.showLight()        # das licht wird hier aktiviert da wir das licht anstelle der Sonne haben wollen
                                             #dies geschieht dadurch indem wir die belichtung mit der sonne im push und pop erstellen
                     glPopMatrix()

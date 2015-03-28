@@ -47,7 +47,9 @@ class MoonCreator():
 
                     #anzeigen der texturen
                     self.__view.txtmond = self.__view.loadTexture("./textures/moon.jpg")
+                    glRotate(90, 1, 0, 0)
                     self.__view.sphere(size, self.__view.txtmond)
+                    glRotate(-90, 1, 0, 0)
                     glPopMatrix()
                 else:
                     raise TypeError("ONLY INTEGER OR FLOAT VALUES ARE ALLOWED")

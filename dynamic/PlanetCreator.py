@@ -60,8 +60,9 @@ class PlanetCreator():
                             glRotatef(24*zaehler, 0, 1, 0)
 
                             self.__view.txterde = self.__view.loadTexture(texture)
+                            glRotate(90, 1, 0, 0)
                             self.__view.sphere(size, self.__view.txterde)
-
+                            glRotate(-90, 1, 0, 0)
                             for x in range(0, monde):
                                 self.__moon.createMoon(zaehler,
                                                        moonData[0][x],
