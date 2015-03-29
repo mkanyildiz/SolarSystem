@@ -1,4 +1,4 @@
-__author__ = 'Muhammed5, mdorfinger'
+__author__ = 'mkanyildiz, mdorfinger'
 
 from dynamic.PlanetCreator import PlanetCreator
 
@@ -9,7 +9,8 @@ from OpenGL.GL import *
 
 class SunCreator(object):
     """
-    Diese Klasse xyz
+    Diese Klasse SunCreator beinhaltet methoden zum erstellen der Sonne und zum
+    Belichten der Umgebung bzw. das Sonnenlicht.
     """
 
     __view = None
@@ -21,15 +22,8 @@ class SunCreator(object):
     def __init__(self):
         """
         Diese Methode setzt Standartwerte für verwendete Variablen.
-        :param anzPlanet: Die anzahl der Planeten die gezeichnet werden müssen
         :return:
         """
-
-        self.__abstand = [10.7,16.3]
-        self.__speed = [2,5]
-        self.__texture = ["./textures/erde.jpg","./textures/merkur.jpg"]
-        self.__anzMonde = [1,2]
-        self.__planetSize = [0.91,0.49]
 
         self.__view = TextureCreator()
         self.__planet = PlanetCreator()
@@ -69,10 +63,15 @@ class SunCreator(object):
     def createSun(self,zaehler,sizeSonne,planetData,moonData):
             """
             Diese Methode xyz
+            :param moonData: moonData ist ein Array der erst bei der MoonCreator KLasse aufgerufen wird. Die Liste beinhaltet variablen wie die größe des Mondes die distanz zum planeten usw.
+            :param planetData: planetData ist ein Array der erst bei der PlanetCreator KLasse aufgerufen wird. Die Liste beinhaltet variablen wie die größe der Planeten die distanz zum planeten usw.
+            :param sizeSonne: Die GRöße der Sonne
             :param zaehler: die variable zaehler sorgt dafür dass die Planet sich auch drehen und nicht an einer stelle stehen bleiben
             :return:
             """
+            #Überprüfen on die anzahl der Planeten ein int wert ist ansonsten wird ein TypeError aufgerufen
             if isinstance(planetData[0], int):
+                #ist die anzahl kleiner gleich null wird ein zerodivisionerror aufgerufen
                 if planetData[0] == 0:
                     raise ZeroDivisionError("Ein Sonnensystem besteht mindestens aus einem Planeten")
                 else:

@@ -1,4 +1,4 @@
-__author__ = 'Muhammed5, mdorfinger'
+__author__ = 'mkanyildiz, mdorfinger'
 
 from OpenGL.GL import *
 
@@ -7,7 +7,8 @@ from dynamic.texture import TextureCreator
 
 class MoonCreator():
     """
-    Diese Klasse xyz
+    Diese Klasse MoonCreator beinhaltet methoden um einen Mond herzustellen.
+    Dies geschieht nur dann wenn der Benutzer Monde als Parameter angibt
     """
 
     __view = None
@@ -22,15 +23,20 @@ class MoonCreator():
 
     def createMoon(self,zaehler,distanz,speed,size):
         """
-        Diese Methode xyz
+        Diese Methode createMoon ist dafür zuständlich Monde für die Planeten zu generieren
+        :param size: Die Größe des Mondes
         :param zaehler: ist für die Rotation zuständig. Bei jedem durchlauf der while schleife wird diese variable hochgezählt und der Rotationswinkel wird geändert dadurch wird das Rotieren ermöglicht
         :param distanz: distanz zwischen mond und planet
         :param speed:   geschwindigkeit der rotation um den Planeten
         :return:
         """
+
+        #Überprüfen on die größe ein int oder ein Float wert sind ansonsten wird ein TypeError aufgerufen
         if isinstance(size, (int,float)):
+            #ist die größe kleiner gleich null wird ein zerodivisionerror aufgerufen
             if size <= 0:
                 raise ZeroDivisionError("Mond muss größer 0 sein")
+            #Hier werden die restlichen parameter darauf überprüft ob sie den richtigen datentyp haben
             elif isinstance(distanz,(int,float)):
                 if isinstance(speed,(int,float)):
                     #Moon

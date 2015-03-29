@@ -36,3 +36,8 @@ texture
 .. autoclass:: TextureCreator
 	:members:
 
+start
+-----
+.. py:currentmodule:: start
+.. autoclass:: Start
+	:members:

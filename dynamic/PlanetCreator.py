@@ -1,7 +1,7 @@
 import string
 from docutils.utils.roman import OutOfRangeError
 
-__author__ = 'Muhammed5'
+__author__ = 'mkanyildiz'
 
 from dynamic.MoonCreator import MoonCreator
 from dynamic.texture import TextureCreator
@@ -10,7 +10,8 @@ from OpenGL.GL import *
 
 class PlanetCreator():
     """
-    Diese Klasse xyz
+    Diese Klasse PlanetCreator beinhaltet Mezhoden um Planeten im Sonnensystem herzustellen.
+    Die größe, anzahl, rotation, usw. kann vom benutzer festgelegt werden
     """
 
     __view = None
@@ -33,6 +34,8 @@ class PlanetCreator():
     def createPlanet(self,zaehler, abstand, speed, texture, monde, size, moonData):
         """
         Diese Methode xyz
+        :param moonData:
+        :param size:
         :param zaehler: ist für die Rotation zuständig. Bei jedem durchlauf der while schleife wird diese variable hochgezählt und der Rotationswinkel wird geändert dadurch wird das Rotieren ermöglicht
         :param abstand: distanz zwischen planet und Sonne
         :param speed: Rotations egschwindigkeit wird übergeben
@@ -40,9 +43,13 @@ class PlanetCreator():
         :param monde: anzahl der Monde
         :return:
         """
+
+        #Überprüfen on die größe ein int oder ein Float wert sind ansonsten wird ein TypeError aufgerufen
         if isinstance(size, (int,float)):
+            #ist die größe kleiner gleich null wird ein zerodivisionerror aufgerufen
             if size <= 0:
                 raise ZeroDivisionError("Size muss größer 0 sein")
+            #Hier werden die restlichen parameter darauf überprüft ob sie den richtigen datentyp haben
             elif isinstance(abstand,(int,float)):
                 if isinstance(speed,(int,float)):
                     if isinstance(monde,(int)):

@@ -11,7 +11,8 @@ from OpenGL.GLU import *
 
 class Sonnensystem(object):
     """
-    Diese Klasse erstellt ein pygame-Fenster, erstellt die Planeten und die Tastensteuerung wird hier ausprogrammiert.
+    Diese Klasse erstellt ein pygame-Fenster, führt die Methode CreateSun aus(wodurch ein Prozess zum erstellen der Sonne, der Planeten und der Monde in Gang gesetzt wird)
+    und die Tastensteuerung wird hier ausprogrammiert.
     """
     colorsun = None
     zaehler = 0

@@ -1,6 +1,6 @@
 
 
-__author__ = 'Muhammed5, mdorfinger'
+__author__ = 'mkanyildiz, mdorfinger'
 
 
 from OpenGL.GL import *
