@@ -52,10 +52,11 @@
 <dl class="class">
 <dt id="dynamic.Display.Sonnensystem">
 <em class="property">class </em><tt class="descclassname">dynamic.Display.</tt><tt class="descname">Sonnensystem</tt><a class="headerlink" href="#dynamic.Display.Sonnensystem" title="Permalink to this definition">¶</a></dt>
-<dd><p>Diese Klasse erstellt ein pygame-Fenster, erstellt die Planeten und die Tastensteuerung wird hier ausprogrammiert.</p>
+<dd><p>Diese Klasse erstellt ein pygame-Fenster, führt die Methode CreateSun aus(wodurch ein Prozess zum erstellen der Sonne, der Planeten und der Monde in Gang gesetzt wird)
+und die Tastensteuerung wird hier ausprogrammiert.</p>
 <dl class="method">
 <dt id="dynamic.Display.Sonnensystem.main">
-<tt class="descname">main</tt><big>(</big><big>)</big><a class="headerlink" href="#dynamic.Display.Sonnensystem.main" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">main</tt><big>(</big><em>sizeSonne</em>, <em>planetData</em>, <em>MoonData</em><big>)</big><a class="headerlink" href="#dynamic.Display.Sonnensystem.main" title="Permalink to this definition">¶</a></dt>
 <dd><p>Diese Methode ist für die Visualisierung der Elemente zuständlich hier enden alle Objekte
 :return:</p>
 </dd></dl>
@@ -68,11 +69,13 @@
 <dl class="class">
 <dt id="dynamic.MoonCreator.MoonCreator">
 <em class="property">class </em><tt class="descclassname">dynamic.MoonCreator.</tt><tt class="descname">MoonCreator</tt><a class="headerlink" href="#dynamic.MoonCreator.MoonCreator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Diese Klasse xyz</p>
+<dd><p>Diese Klasse MoonCreator beinhaltet methoden um einen Mond herzustellen.
+Dies geschieht nur dann wenn der Benutzer Monde als Parameter angibt</p>
 <dl class="method">
 <dt id="dynamic.MoonCreator.MoonCreator.createMoon">
-<tt class="descname">createMoon</tt><big>(</big><em>zaehler</em>, <em>distanz</em>, <em>speed</em><big>)</big><a class="headerlink" href="#dynamic.MoonCreator.MoonCreator.createMoon" title="Permalink to this definition">¶</a></dt>
-<dd><p>Diese Methode xyz
+<tt class="descname">createMoon</tt><big>(</big><em>zaehler</em>, <em>distanz</em>, <em>speed</em>, <em>size</em><big>)</big><a class="headerlink" href="#dynamic.MoonCreator.MoonCreator.createMoon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Diese Methode createMoon ist dafür zuständlich Monde für die Planeten zu generieren
+:param size: Die Größe des Mondes
 :param zaehler: ist für die Rotation zuständig. Bei jedem durchlauf der while schleife wird diese variable hochgezählt und der Rotationswinkel wird geändert dadurch wird das Rotieren ermöglicht
 :param distanz: distanz zwischen mond und planet
 :param speed:   geschwindigkeit der rotation um den Planeten
@@ -87,11 +90,14 @@
 <dl class="class">
 <dt id="dynamic.PlanetCreator.PlanetCreator">
 <em class="property">class </em><tt class="descclassname">dynamic.PlanetCreator.</tt><tt class="descname">PlanetCreator</tt><a class="headerlink" href="#dynamic.PlanetCreator.PlanetCreator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Diese Klasse xyz</p>
+<dd><p>Diese Klasse PlanetCreator beinhaltet Mezhoden um Planeten im Sonnensystem herzustellen.
+Die größe, anzahl, rotation, usw. kann vom benutzer festgelegt werden</p>
 <dl class="method">
 <dt id="dynamic.PlanetCreator.PlanetCreator.createPlanet">
-<tt class="descname">createPlanet</tt><big>(</big><em>zaehler</em>, <em>abstand</em>, <em>speed</em>, <em>texture</em>, <em>monde</em><big>)</big><a class="headerlink" href="#dynamic.PlanetCreator.PlanetCreator.createPlanet" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">createPlanet</tt><big>(</big><em>zaehler</em>, <em>abstand</em>, <em>speed</em>, <em>texture</em>, <em>monde</em>, <em>size</em>, <em>moonData</em><big>)</big><a class="headerlink" href="#dynamic.PlanetCreator.PlanetCreator.createPlanet" title="Permalink to this definition">¶</a></dt>
 <dd><p>Diese Methode xyz
+:param moonData:
+:param size:
 :param zaehler: ist für die Rotation zuständig. Bei jedem durchlauf der while schleife wird diese variable hochgezählt und der Rotationswinkel wird geändert dadurch wird das Rotieren ermöglicht
 :param abstand: distanz zwischen planet und Sonne
 :param speed: Rotations egschwindigkeit wird übergeben
@@ -107,12 +113,16 @@
 <h2>SunCreator<a class="headerlink" href="#suncreator" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="dynamic.SunCreator.SunCreator">
-<em class="property">class </em><tt class="descclassname">dynamic.SunCreator.</tt><tt class="descname">SunCreator</tt><big>(</big><em>anzPlanet</em><big>)</big><a class="headerlink" href="#dynamic.SunCreator.SunCreator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Diese Klasse xyz</p>
+<em class="property">class </em><tt class="descclassname">dynamic.SunCreator.</tt><tt class="descname">SunCreator</tt><a class="headerlink" href="#dynamic.SunCreator.SunCreator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Diese Klasse SunCreator beinhaltet methoden zum erstellen der Sonne und zum
+Belichten der Umgebung bzw. das Sonnenlicht.</p>
 <dl class="method">
 <dt id="dynamic.SunCreator.SunCreator.createSun">
-<tt class="descname">createSun</tt><big>(</big><em>zaehler</em><big>)</big><a class="headerlink" href="#dynamic.SunCreator.SunCreator.createSun" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">createSun</tt><big>(</big><em>zaehler</em>, <em>sizeSonne</em>, <em>planetData</em>, <em>moonData</em><big>)</big><a class="headerlink" href="#dynamic.SunCreator.SunCreator.createSun" title="Permalink to this definition">¶</a></dt>
 <dd><p>Diese Methode xyz
+:param moonData: moonData ist ein Array der erst bei der MoonCreator KLasse aufgerufen wird. Die Liste beinhaltet variablen wie die größe des Mondes die distanz zum planeten usw.
+:param planetData: planetData ist ein Array der erst bei der PlanetCreator KLasse aufgerufen wird. Die Liste beinhaltet variablen wie die größe der Planeten die distanz zum planeten usw.
+:param sizeSonne: Die GRöße der Sonne
 :param zaehler: die variable zaehler sorgt dafür dass die Planet sich auch drehen und nicht an einer stelle stehen bleiben
 :return:</p>
 </dd></dl>
@@ -166,6 +176,9 @@
 </dd></dl>
 
 </div>
+<div class="section" id="start">
+<h2>start<a class="headerlink" href="#start" title="Permalink to this headline">¶</a></h2>
+</div>
 </div>
 
 
@@ -182,6 +195,7 @@
 <li><a class="reference internal" href="#planetcreator">PlanetCreator</a></li>
 <li><a class="reference internal" href="#suncreator">SunCreator</a></li>
 <li><a class="reference internal" href="#texture">texture</a></li>
+<li><a class="reference internal" href="#start">start</a></li>
 </ul>
 </li>
 </ul>

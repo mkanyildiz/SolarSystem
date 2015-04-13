@@ -29,4 +29,16 @@ class Start:
           "drehen ... Rein und Rauszoomen \n Linke und Rechte Pfeiltaste ... Beschleunigung in die angegebene Richtung")
 
     so = Sonnensystem()  # Das Sonnensystem wird aufgerufen
-    so.main()  # und ausgeführt
+    #die methode main wird mit drei paramtern aufgerufen im ersten Parameter
+    #sind die daten der Sonne enthalten(siehe Display klasse)
+    #im zweiten die Daten der PLaneten und im dritten die daten der Monde
+    #die Parameter sind wie folgt strukturiert
+
+    #Die Sonne - (größe der Sonne,
+    #Der Planet - [anz,abstand zur Sonne, speed, texture, anz monde, size]
+    #Der Mond - [distanz,speed,size])
+    so.main(
+        5,
+        [2,[10.7,16.3],[2,5],["./textures/erde.jpg","./textures/merkur.jpg"],[1,2],[0.91,0.49]],
+        [[2.5,1.68],[2,5],[0.2,0.1]]
+    )  # und ausgeführt

@@ -1,6 +1,6 @@
 
 
-__author__ = 'Muhammed5, mdorfinger'
+__author__ = 'mkanyildiz, mdorfinger'
 
 
 from OpenGL.GL import *
@@ -23,6 +23,7 @@ class TextureCreator(object):
         self.txtsonne = None
         self.txtmond = None
         self.mod = True
+        self.var = False
         # self.__view = Sonnensystem()
 
 
@@ -34,26 +35,27 @@ class TextureCreator(object):
         """
         try:
             image = open(bild)
+            self.var = True
         except:
             print ("Unable to load image")
-
         # Textur
-        ix = image.size[0] # Größe der Textur (Horizontal)
-        iy = image.size[1] # Größe der Textur (Vertikal)
-        image = image.tostring("raw", "RGBX", 0, -1)
+        if self.var == True:
+            ix = image.size[0] # Größe der Textur (Horizontal)
+            iy = image.size[1] # Größe der Textur (Vertikal)
+            image = image.tostring("raw", "RGBX", 0, -1)
 
-        # Textur erstellen
-        #glEnable(GL_TEXTURE_2D)
-        textures = glGenTextures(1) # Textur ID
-        glBindTexture(GL_TEXTURE_2D, textures)  # 2D Textur (x and y Größe)
+            # Textur erstellen
+            #glEnable(GL_TEXTURE_2D)
+            textures = glGenTextures(1) # Textur ID
+            glBindTexture(GL_TEXTURE_2D, textures)  # 2D Textur (x and y Größe)
 
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_NEAREST)
-        gluBuild2DMipmaps(GL_TEXTURE_2D, 3, ix, iy, GL_RGBA, GL_UNSIGNED_BYTE, image)
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_NEAREST)
+            gluBuild2DMipmaps(GL_TEXTURE_2D, 3, ix, iy, GL_RGBA, GL_UNSIGNED_BYTE, image)
 
-        return textures # ID wird zurückgegeben
+            return textures # ID wird zurückgegeben
 
-    def sphere(self,radius, txt):
+    def sphere(self, radius, txt):
         """
         Diese Methode erstellt eine Sphere und legt eine Texur darauf.
         :param radius: Der Radius der Sphere
