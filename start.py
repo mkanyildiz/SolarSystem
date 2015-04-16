@@ -39,6 +39,6 @@ class Start:
     #Der Mond - [distanz,speed,size])
     so.main(
         5,
-        [2,[10.7,16.3],[2,5],["./textures/erde.jpg","./textures/merkur.jpg"],[1,2],[0.91,0.49]],
-        [[2.5,1.68],[2,5],[0.2,0.1]]
+        [3,[10.7,16.3,25],[2,5,3],["./textures/erde.jpg","./textures/merkur.jpg","./textures/erde.jpg"],[1,2,2],[0.91,0.49,2]],
+        [[2.5,1.68,1],[2,5,3],[0.2,0.1,0.1]]
     )  # und ausgeführt

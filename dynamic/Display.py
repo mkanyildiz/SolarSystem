@@ -42,6 +42,7 @@ class Sonnensystem(object):
         """
         if isinstance(sizeSonne, (int,float)):
             if sizeSonne > 0:
+
                 global event
                 #wir definieren das fenster
                 pygame.init()
@@ -147,6 +148,7 @@ class Sonnensystem(object):
 
                     pygame.display.flip()
                     pygame.time.wait(1)
+
                 else:
                     raise ZeroDivisionError("größe der sonne darf nicht kleiner gleich 0 sein")
         else:
