@@ -93,5 +93,10 @@ class DisplayTest(unittest.TestCase):
                     [2,[10.7,16.3],[2,5],["./textures/erde.jpg","./textures/merkur.jpg"],[1,2],[0.91,0.49]],
                     [[1,1],["",""],[1,1]]))
 
+    def testOk(self):
+        self.assertRaises(SystemExit, lambda:self.p1.main(5,
+        [3,[10.7,16.3,25],[2,5,3],["./textures/erde.jpg","./textures/merkur.jpg","./textures/erde.jpg"],[1,2,2],[0.91,0.49,2]],
+        [[2.5,1.68,1],[2,5,3],[0.2,0.1,0.1]]))
+
 if __name__ == '__main__':
     unittest.main()
