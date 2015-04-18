@@ -1,0 +1,44 @@
+actionid=docs
+msg=getenv
+cmdargs=[local('C:\\Users\\Muhammed5\\Documents\\GitHub\\SolarSystem\\.tox\\docs\\Scripts\\pip.EXE'), 'install', 'sphinx', 'pytest']
+env={'COMSPEC': 'C:\\Windows\\system32\\cmd.exe', 'HOME': 'C:\\Users\\Muhammed5', 'PROGRAMFILES': 'C:\\Program Files (x86)', 'PROGRAMW6432': 'C:\\Program Files', 'USERPROFILE': 'C:\\Users\\Muhammed5', 'WINDIR': 'C:\\Windows', 'COMMONPROGRAMW6432': 'C:\\Program Files\\Common Files', 'EMC_AUTOPLAY': 'c:\\Program Files (x86)\\Common Files\\Roxio Shared\\OEM\\', 'PHPRC': 'C:\\Program Files (x86)\\PHP\\', 'ASL.LOG': 'Destination=file', 'TEMP': 'C:\\Users\\MUHAMM~1\\AppData\\Local\\Temp', 'PATH': 'C:\\Users\\Muhammed5\\Documents\\GitHub\\SolarSystem\\.tox\\docs\\Scripts;C:\\Python34\\Lib\\site-packages\\PyQt5;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\AMD APP\\bin\\x86_64;C:\\Program Files (x86)\\AMD APP\\bin\\x86;C:\\Program Files (x86)\\Notepad++\\plugins\\database;C:\\Program Files (x86)\\Notepad++\\plugins\\PHP\\ext;C:\\Program Files (x86)\\Notepad++\\plugins\\PHP;C:\\Program Files (x86)\\PHP\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\Sy stem32\\Wbem;C:\\Program Files\\Java\\jdk1.7.0_11\\bin;C:\\Program Files (x86)\\PHP;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files (x86)\\Git\\bin;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;C:\\Program Files (x86)\\MySQL\\MySQL Server 5.5\\bin;C:\\Python34;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;C:\\Python34;C:\\Python34\\Scripts;C:\\Program Files (x86)\\Nmap;C:\\Users\\Muhammed5\\AppData\\Roaming\\npm;C:\\Program Files (x86)\\gradle-2.0\\bin;C:\\Program Files (x86)\\OpenVPN\\bin', 'OS': 'Windows_NT', 'PHP_PEAR_INSTALL_DIR': 'C:\\Program Files (x86)\\PHP\\pear', 'HOMEPATH': '\\Users\\Muhammed5', 'PUBLIC': 'C:\\Users\\Public', 'CONFIGSETROOT': 'C:\\Windows\\ConfigSetRoot', 'TMP': 'C:\\Users\\MUHAMM~1\\AppData\\Local\\Temp', 'PHP_PEAR_TEST_DIR': 'C:\\Program Files (x86)\\PHP\\tests', 'PHP_PEAR_BIN_DIR': 'C:\\Program Files (x86)\\PHP', 'PROCESSOR_LEVEL': '6', 'PROGRAMFILES(X86)': 'C:\\Program Files (x86)', 'LOCALAPPDATA': 'C:\\Users\\Muhammed5\\AppData\\Local', 'PT5HOME': 'C:\\Program Files (x86)\\Cisco Packet Tracer 5.3.3', 'LOGONSERVER': '\\\\MUHAMMED5-VAIO', 'USERDOMAIN': 'Muhammed5-VAIO', 'PROCESSOR_IDENTIFIER': 'Intel64 Family 6 Model 58 Stepping 9, GenuineIntel', 'PROCESSOR_ARCHITEW6432': 'AMD64', 'PROMPT': '$P$G', 'SYSTEMDRIVE': 'C:', 'ROBOTINOVIEW2_DIR': 'C:\\Program Files (x86)\\Didactic\\RobotinoView2', 'ALLUSERSPROFILE': 'C:\\ProgramData', 'RCAUTOPLAY': 'c:\\Program Files (x86)\\Roxio 2010\\OEM\\Roxio Central 5\\', 'VIRTUAL_ENV': 'C:\\Users\\Muhammed5\\Documents\\GitHub\\SolarSystem\\.tox\\docs', 'VBOX_MSI_INSTALL_PATH': 'C:\\Program Files\\Oracle\\VirtualBox\\', 'WINDOWS_TRACING_LOGFILE': 'C:\\BVTBin\\Tests\\installpackage\\csilogfile.log', 'COMMONPROGRAMFILES': 'C:\\Program Files (x86)\\Common Files', 'PSMODULEPATH': 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\', 'PROGRAMDATA': 'C:\\ProgramData', 'WINDOWS_TRACING_FLAGS': '3', 'PYTHONHASHSEED': '246', 'COMMONPROGRAMFILES(X86)': 'C:\\Program Files (x86)\\Common Files', 'PHP_PEAR_SYSCONF_DIR': 'C:\\Program Files (x86)\\PHP', 'PROCESSOR_ARCHITECTURE': 'x86', 'AMDAPPSDKROOT': 'C:\\Program Files (x86)\\AMD APP\\', 'USERNAME': 'Muhammed5', 'PATHEXT': '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY', 'COMPUTERNAME': 'MUHAMMED5-VAIO', 'NUMBER_OF_PROCESSORS': '8', 'PHP_PEAR_PHP_BIN': 'C:\\Program Files (x86)\\PHP\\php.exe', 'SESSIONNAME': 'Console', 'VS100COMNTOOLS': 'C:\\Program Files (x86)\\Microsoft Visual Studio 10.0\\Common7\\Tools\\', 'PROCESSOR_REVISION': '3a09', 'APPDATA': 'C:\\Users\\Muhammed5\\AppData\\Roaming', 'PHP_PEAR_DATA_DIR': 'C:\\Program Files (x86)\\PHP\\data', 'HOMEDRIVE': 'C:', 'PHP_PEAR_DOC_DIR': 'C:\\Program Files (x86)\\PHP\\docs', 'SYSTEMROOT': 'C:\\Windows', 'FP_NO_HOST_CHECK': 'NO'}
+Collecting sphinx
+  Downloading Sphinx-1.3.1-py2.py3-none-any.whl (1.3MB)
+Collecting pytest
+  Downloading pytest-2.7.0.tar.gz (526kB)
+Collecting colorama (from sphinx)
+  Downloading colorama-0.3.3.tar.gz
+Collecting docutils>=0.11 (from sphinx)
+  Downloading docutils-0.12.tar.gz (1.6MB)
+Collecting Jinja2>=2.3 (from sphinx)
+  Downloading Jinja2-2.7.3.tar.gz (378kB)
+Collecting Pygments>=2.0 (from sphinx)
+  Downloading Pygments-2.0.2-py3-none-any.whl (672kB)
+Collecting six>=1.4 (from sphinx)
+  Downloading six-1.9.0-py2.py3-none-any.whl
+Collecting sphinx-rtd-theme<0.2,>=0.1 (from sphinx)
+  Downloading sphinx_rtd_theme-0.1.7.tar.gz (220kB)
+Collecting babel>=1.3 (from sphinx)
+  Downloading Babel-1.3.tar.gz (3.4MB)
+Collecting alabaster<0.8,>=0.7 (from sphinx)
+  Downloading alabaster-0.7.3.tar.gz
+Collecting snowballstemmer>=1.1 (from sphinx)
+  Downloading snowballstemmer-1.2.0.tar.gz (49kB)
+Collecting py>=1.4.25 (from pytest)
+  Using cached py-1.4.26.tar.gz
+Collecting markupsafe (from Jinja2>=2.3->sphinx)
+  Downloading MarkupSafe-0.23.tar.gz
+Collecting pytz>=0a (from babel>=1.3->sphinx)
+  Downloading pytz-2015.2-py2.py3-none-any.whl (476kB)
+Installing collected packages: colorama, docutils, markupsafe, Jinja2, Pygments, six, sphinx-rtd-theme, pytz, babel, alabaster, snowballstemmer, sphinx, py, pytest
+  Running setup.py install for colorama
+  Running setup.py install for docutils
+  Running setup.py install for markupsafe
+  Running setup.py install for Jinja2
+  Running setup.py install for sphinx-rtd-theme
+  Running setup.py install for babel
+  Running setup.py install for alabaster
+  Running setup.py install for snowballstemmer
+  Running setup.py install for py
+  Running setup.py install for pytest
+Successfully installed Jinja2-2.7.3 Pygments-2.0.2 alabaster-0.7.3 babel-1.3 colorama-0.3.3 docutils-0.12 markupsafe-0.23 py-1.4.26 pytest-2.7.0 pytz-2015.2 six-1.9.0 snowballstemmer-1.2.0 sphinx-1.3.1 sphinx-rtd-theme-0.1.7
