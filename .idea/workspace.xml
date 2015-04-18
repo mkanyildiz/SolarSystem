@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="499f99e8-00ed-4ae6-8b07-c9651edd332d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testcases/Test Results - Unittests_in_DisplayTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dynamic/Display.py" afterPath="$PROJECT_DIR$/dynamic/Display.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/DisplayTest.py" afterPath="$PROJECT_DIR$/testcases/DisplayTest.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/Test Results - Unittests_in_DisplayTest.html" afterPath="$PROJECT_DIR$/testcases/Test Results - Unittests_in_DisplayTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/start.py" afterPath="$PROJECT_DIR$/start.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testcases/Test Results - Unittests_in_DisplayTest.xml" afterPath="$PROJECT_DIR$/testcases/Test Results - Unittests_in_DisplayTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SolarSystem.iws" />
@@ -24,19 +20,19 @@
     <SUITE FILE_PATH="coverage/SolarSystem$output.coverage" NAME="output Coverage Results" MODIFIED="1425081541059" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SolarSystem$Unittests_in_MoonCreatorTest.coverage" NAME="Unittests in MoonCreatorTest Coverage Results" MODIFIED="1427550183782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcases" />
     <SUITE FILE_PATH="coverage/SolarSystem$Unittest_DisplayTest_testPlanetAbstandString.coverage" NAME="Unittest DisplayTest.testPlanetAbstandString Coverage Results" MODIFIED="1427571023250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcases" />
-    <SUITE FILE_PATH="coverage/SolarSystem$start.coverage" NAME="start Coverage Results" MODIFIED="1429175268357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SolarSystem$start.coverage" NAME="start Coverage Results" MODIFIED="1429319225944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SolarSystem$Unittest_TestDosplay_testPlanetanzString.coverage" NAME="Unittest TestDosplay.testPlanetanzString Coverage Results" MODIFIED="1427542400516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcases" />
     <SUITE FILE_PATH="coverage/SolarSystem$Unittest_TestDosplay_testMainFloat.coverage" NAME="Unittest TestDosplay.testMainFloat Coverage Results" MODIFIED="1427546319160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcases" />
     <SUITE FILE_PATH="coverage/SolarSystem$PlanetCreator.coverage" NAME="PlanetCreator Coverage Results" MODIFIED="1427548511775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dynamic" />
     <SUITE FILE_PATH="coverage/SolarSystem$Unittest_DisplayTest_testMainFloat.coverage" NAME="Unittest DisplayTest.testMainFloat Coverage Results" MODIFIED="1427567525789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcases" />
-    <SUITE FILE_PATH="coverage/SolarSystem$Unittest_DisplayTest_testOk.coverage" NAME="Unittest DisplayTest.testOk Coverage Results" MODIFIED="1429175547757" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcases" />
+    <SUITE FILE_PATH="coverage/SolarSystem$Unittest_DisplayTest_testOk.coverage" NAME="Unittest DisplayTest.testOk Coverage Results" MODIFIED="1429319208475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcases" />
     <SUITE FILE_PATH="coverage/SolarSystem$Unittest_DisplayTest_testSome.coverage" NAME="Unittest DisplayTest.testSome Coverage Results" MODIFIED="1427567510165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcases" />
     <SUITE FILE_PATH="coverage/SolarSystem$Unittest_DisplayTest_testPlanetTextureInt.coverage" NAME="Unittest DisplayTest.testPlanetTextureInt Coverage Results" MODIFIED="1427570923774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcases" />
     <SUITE FILE_PATH="coverage/SolarSystem$overpainting.coverage" NAME="overpainting Coverage Results" MODIFIED="1425084554848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:/Python34/Lib/site-packages/PyQt5/examples/opengl" />
     <SUITE FILE_PATH="coverage/SolarSystem$Unittest_TestDosplay_testMainEmptyPlanet.coverage" NAME="Unittest TestDosplay.testMainEmptyPlanet Coverage Results" MODIFIED="1427543319875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcases" />
     <SUITE FILE_PATH="coverage/SolarSystem$Unittest_TestPlanetCreator_testMain.coverage" NAME="Unittest TestPlanetCreator.testMain Coverage Results" MODIFIED="1427484850893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcases" />
     <SUITE FILE_PATH="coverage/SolarSystem$Unittest_DisplayTest_testMainNeg.coverage" NAME="Unittest DisplayTest.testMainNeg Coverage Results" MODIFIED="1427568039058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcases" />
-    <SUITE FILE_PATH="coverage/SolarSystem$Unittests_in_DisplayTest.coverage" NAME="Unittests in DisplayTest Coverage Results" MODIFIED="1429175584118" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcases" />
+    <SUITE FILE_PATH="coverage/SolarSystem$Unittests_in_DisplayTest.coverage" NAME="Unittests in DisplayTest Coverage Results" MODIFIED="1429319268105" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcases" />
     <SUITE FILE_PATH="coverage/SolarSystem$Unittest_DisplayTest_testPlanetAnz.coverage" NAME="Unittest DisplayTest.testPlanetAnz Coverage Results" MODIFIED="1427567531942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcases" />
     <SUITE FILE_PATH="coverage/SolarSystem$Unittest_TestDosplay_testPlanetanzNull.coverage" NAME="Unittest TestDosplay.testPlanetanzNull Coverage Results" MODIFIED="1427542385055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcases" />
     <SUITE FILE_PATH="coverage/SolarSystem$Unittest_TestDosplay_testMain.coverage" NAME="Unittest TestDosplay.testMain Coverage Results" MODIFIED="1427566806003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcases" />
@@ -82,7 +78,7 @@
     <disable_hints />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
-  <component name="ExportTestResults" outputFolder="$PROJECT_DIR$/testcases" userTempatePath="" />
+  <component name="ExportTestResults" exportFormat="Xml" outputFolder="$PROJECT_DIR$/testcases" userTempatePath="" />
   <component name="FavoritesManager">
     <favorites_list name="SolarSystem" />
   </component>
@@ -91,7 +87,7 @@
       <file leaf-file-name="Display.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dynamic/Display.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.52" vertical-offset="1545" max-vertical-offset="2737">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1545" max-vertical-offset="2737">
               <caret line="99" column="16" selection-start-line="99" selection-start-column="16" selection-end-line="99" selection-end-column="16" />
               <folding>
                 <element signature="e#39#80#0" expanded="true" />
@@ -115,8 +111,8 @@
       <file leaf-file-name="DisplayTest.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testcases/DisplayTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.56" vertical-offset="1234" max-vertical-offset="1819">
-              <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+            <state vertical-scroll-proportion="-15.32" vertical-offset="1232" max-vertical-offset="1819">
+              <caret line="95" column="11" selection-start-line="95" selection-start-column="11" selection-end-line="95" selection-end-column="11" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -147,8 +143,8 @@
       <file leaf-file-name="texture.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dynamic/texture.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53675216" vertical-offset="944" max-vertical-offset="1581">
-              <caret line="78" column="16" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.7918149" vertical-offset="677" max-vertical-offset="1581">
+              <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -157,7 +153,7 @@
       <file leaf-file-name="Test Results - Unittests_in_DisplayTest.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testcases/Test Results - Unittests_in_DisplayTest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+            <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="493">
               <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
               <folding />
             </state>
@@ -177,7 +173,7 @@
       <file leaf-file-name="MoonCreator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dynamic/MoonCreator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.84" vertical-offset="516" max-vertical-offset="1190">
+            <state vertical-scroll-proportion="0.0" vertical-offset="516" max-vertical-offset="1190">
               <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="102" />
               <folding />
             </state>
@@ -187,7 +183,7 @@
       <file leaf-file-name="start.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/start.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.96" vertical-offset="240" max-vertical-offset="850">
+            <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="850">
               <caret line="42" column="44" selection-start-line="40" selection-start-column="6" selection-end-line="42" selection-end-column="44" />
               <folding>
                 <element signature="e#26#52#0" expanded="true" />
@@ -243,10 +239,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="960" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -724,8 +718,8 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in DisplayTest" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest DisplayTest.testOk" />
-        <item index="2" class="java.lang.String" itemvalue="Python.start" />
+        <item index="1" class="java.lang.String" itemvalue="Python.start" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest DisplayTest.testOk" />
         <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest DisplayTest.testMoonSpeedString" />
         <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest DisplayTest.testMainNull" />
       </list>
@@ -745,7 +739,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="0" y="0" width="960" height="1040" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -754,10 +748,10 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32700422" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13802083" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32618025" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13771187" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12604167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23834746" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -981,13 +975,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/make.bat">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="4216">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sphere.py">
@@ -1050,7 +1044,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1058,7 +1051,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="4522">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1066,7 +1058,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="202" max-vertical-offset="833">
           <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1105,7 +1096,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dynamic/MoonCreator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.84" vertical-offset="516" max-vertical-offset="1190">
+        <state vertical-scroll-proportion="0.0" vertical-offset="516" max-vertical-offset="1190">
           <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="102" />
           <folding />
         </state>
@@ -1113,7 +1104,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dynamic/Display.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.52" vertical-offset="1545" max-vertical-offset="2737">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1545" max-vertical-offset="2737">
           <caret line="99" column="16" selection-start-line="99" selection-start-column="16" selection-end-line="99" selection-end-column="16" />
           <folding>
             <element signature="e#39#80#0" expanded="true" />
@@ -1123,7 +1114,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/start.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.96" vertical-offset="240" max-vertical-offset="850">
+        <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="850">
           <caret line="42" column="44" selection-start-line="40" selection-start-column="6" selection-end-line="42" selection-end-column="44" />
           <folding>
             <element signature="e#26#52#0" expanded="true" />
@@ -1149,8 +1140,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testcases/DisplayTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.56" vertical-offset="1234" max-vertical-offset="1819">
-          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+        <state vertical-scroll-proportion="-15.32" vertical-offset="1232" max-vertical-offset="1819">
+          <caret line="95" column="11" selection-start-line="95" selection-start-column="11" selection-end-line="95" selection-end-column="11" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>
@@ -1159,8 +1150,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dynamic/texture.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53675216" vertical-offset="944" max-vertical-offset="1581">
-          <caret line="78" column="16" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.7918149" vertical-offset="677" max-vertical-offset="1581">
+          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding />
         </state>
       </provider>
